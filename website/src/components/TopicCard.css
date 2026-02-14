@@ -1,0 +1,55 @@
+.topic-card {
+  display: block;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  opacity: 1;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin: 0;
+}
+
+.card-date {
+  font-size: 0.9rem;
+}
+
+.level-dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: var(--spacing-xs);
+}
+
+.level-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: transform var(--transition-fast);
+}
+
+.topic-card:hover .level-dot {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .topic-card {
+    padding: var(--spacing-md);
+  }
+}

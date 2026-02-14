@@ -1,0 +1,17 @@
+[
+  {
+    "id": "example-quantum-computing",
+    "keyword": {
+      "en": "Quantum Computing",
+      "ja": "量子コンピューティング"
+    },
+    "created": "2026-02-14T16:00:00Z",
+    "colors": {
+      "level1": "#E3B341",
+      "level2": "#E07A3F",
+      "level3": "#C06C84",
+      "level4": "#4C78A8",
+      "level5": "#2A8F87"
+    }
+  }
+]

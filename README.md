@@ -14,6 +14,8 @@
 
 **Self-evolving** — The agent modifies its own code through pull requests. Every change is auditable, every change is reversible. You stay in control.
 
+**Built-in features** — Includes a `/5levels` command system that generates bilingual (English/Japanese) educational explanations from child to expert level, with automatic web publishing. See `docs/QUICKSTART_5LEVELS.md`.
+
 ---
 
 ## How It Works
