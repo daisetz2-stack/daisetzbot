@@ -1,0 +1,35 @@
+{
+  "id": "example-quantum-computing",
+  "keyword": {
+    "en": "Quantum Computing",
+    "ja": "量子コンピューティング"
+  },
+  "created": "2026-02-14T16:00:00Z",
+  "colors": {
+    "level1": "#E3B341",
+    "level2": "#E07A3F",
+    "level3": "#C06C84",
+    "level4": "#4C78A8",
+    "level5": "#2A8F87"
+  },
+  "levels": {
+    "en": [
+      {"level": 1, "title": "Child (5-10)", "content": "Simple explanation about quantum computing for children."},
+      {"level": 2, "title": "Teen (13-17)", "content": "More detailed explanation for teenagers."},
+      {"level": 3, "title": "Undergraduate", "content": "Technical explanation for university students."},
+      {"level": 4, "title": "Graduate", "content": "Advanced explanation for graduate students."},
+      {"level": 5, "title": "Expert", "content": "Expert-level explanation with cutting-edge research."}
+    ],
+    "ja": [
+      {"level": 1, "title": "子ども（5〜10歳）", "content": "子ども向けの簡単な説明"},
+      {"level": 2, "title": "ティーンエイジャー（13〜17歳）", "content": "ティーン向けの詳しい説明"},
+      {"level": 3, "title": "大学生", "content": "大学生向けの技術的な説明"},
+      {"level": 4, "title": "大学院生", "content": "大学院生向けの高度な説明"},
+      {"level": 5, "title": "専門家", "content": "専門家向けの最先端研究を含む説明"}
+    ]
+  },
+  "sources": [
+    {"title": "Quantum Computing Basics", "url": "https://example.com/quantum", "language": "en"},
+    {"title": "量子コンピューター入門", "url": "https://example.jp/quantum", "language": "ja"}
+  ]
+}
