@@ -1,0 +1,1 @@
+Read the file at operating_system/5levels/5levels_research.md and perform comprehensive 5-level research on "Knowledge Graph". Save the final report using the template at operating_system/5levels/5levels_report_template.md as operating_system/5levels/5levels_report.md
