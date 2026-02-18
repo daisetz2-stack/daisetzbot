@@ -11,7 +11,7 @@ The 5 Levels Research Agent System enables thepopebot to perform comprehensive, 
          ↓
 Trigger System (TRIGGERS.json)
          ↓
-Create Job: "Read .pi/skills/5levels-explainer/5levels_research.md and research: [keyword]"
+Create Job: "Read operating_system/5levels/5levels_research.md and research: [keyword]"
          ↓
 Docker Agent (Pi + brave-search skill)
          ↓
@@ -103,7 +103,7 @@ The Claude chat system can handle `/5levels [keyword]` commands using the `creat
 **How it works:**
 1. User sends `/5levels quantum computing` in Telegram
 2. Claude chat detects the command pattern
-3. Creates job with task: "Read .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: quantum computing"
+3. Creates job with task: "Read operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: quantum computing"
 4. Agent executes research and generates report
 5. User receives notification with summary
 
@@ -111,7 +111,7 @@ The Claude chat system can handle `/5levels [keyword]` commands using the `creat
 
 ```markdown
 When users send `/5levels [keyword]`, create a research job:
-- Task: "Read the file at .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: [keyword]"
+- Task: "Read the file at operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: [keyword]"
 - Notify the user that research is starting and will take 1-2 hours
 ```
 
@@ -126,7 +126,7 @@ Add a trigger in `operating_system/TRIGGERS.json`:
   "actions": [
     {
       "type": "agent",
-      "job": "Read the file at .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: {{body.keyword}}"
+      "job": "Read the file at operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: {{body.keyword}}"
     }
   ],
   "enabled": true
@@ -150,7 +150,7 @@ Add to `operating_system/CRONS.json` for periodic research on pre-defined topics
   "name": "weekly-tech-research",
   "schedule": "0 0 * * 1",
   "type": "agent",
-  "job": "Read the file at .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: [topic from trending list]",
+  "job": "Read the file at operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: [topic from trending list]",
   "enabled": true
 }
 ```
@@ -338,7 +338,7 @@ Part of thepopebot system. See repository LICENSE file.
   "watch_path": "/telegram/webhook",
   "actions": [{
     "type": "agent",
-    "job": "Read .pi/skills/5levels-explainer/5levels_research.md and research: {{body.message.text}}"
+    "job": "Read operating_system/5levels/5levels_research.md and research: {{body.message.text}}"
   }]
 }
 ```

@@ -101,7 +101,7 @@ Conduct comprehensive multi-level research on any topic.
 1. Acknowledge the research request
 2. Explain it will take 60-90 minutes
 3. Create the research job using create_job tool:
-   - Task: "Read the file at .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: [keyword]"
+   - Task: "Read the file at operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: [keyword]"
 4. Tell user they'll be notified when complete
 5. Provide preview of what the report will cover (5 levels)
 ```
@@ -119,7 +119,7 @@ curl -X POST https://your-bot-url.com/webhook \
   -H "Authorization: Bearer ${API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{
-    "job": "Read the file at .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: photosynthesis"
+    "job": "Read the file at operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: photosynthesis"
   }'
 ```
 
@@ -166,7 +166,7 @@ For external integrations, add to `operating_system/TRIGGERS.json`:
   "actions": [
     {
       "type": "agent",
-      "job": "Read the file at .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: {{body.keyword}}"
+      "job": "Read the file at operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: {{body.keyword}}"
     }
   ],
   "enabled": true
@@ -190,7 +190,7 @@ For periodic research on trending topics, add to `operating_system/CRONS.json`:
   "name": "weekly-tech-research",
   "schedule": "0 9 * * 1",
   "type": "agent",
-  "job": "Read the file at .pi/skills/5levels-explainer/5levels_research.md. First, use brave-search to find the top trending technology topic this week. Then conduct comprehensive 5-level research on that topic.",
+  "job": "Read the file at operating_system/5levels/5levels_research.md. First, use brave-search to find the top trending technology topic this week. Then conduct comprehensive 5-level research on that topic.",
   "enabled": true
 }
 ```
@@ -218,12 +218,12 @@ Enable all three trigger methods:
 
 Create specialized research variants:
 
-**File:** `.pi/skills/5levels-explainer/5levels_research_scientific.md`
+**File:** `operating_system/5levels/5levels_research_scientific.md`
 - Emphasizes peer-reviewed sources
 - Requires more Level 3 technical depth
 - Includes statistical analysis requirements
 
-**File:** `.pi/skills/5levels-explainer/5levels_research_market.md`
+**File:** `operating_system/5levels/5levels_research_market.md`
 - Focuses on market data, trends, competitors
 - Includes financial metrics
 - Emphasizes Level 4 business applications
@@ -235,7 +235,7 @@ Create specialized research variants:
   "watch_path": "/webhook",
   "actions": [{
     "type": "agent",
-    "job": "Read .pi/skills/5levels-explainer/5levels_research_scientific.md and research: {{body.keyword}}"
+    "job": "Read operating_system/5levels/5levels_research_scientific.md and research: {{body.keyword}}"
   }]
 }
 ```
@@ -328,7 +328,7 @@ Look for:
 Create jobs that compare multiple topics:
 
 ```
-Read .pi/skills/5levels-explainer/5levels_research.md and conduct comparative 5-level research on: "quantum computing" vs "classical supercomputing". At each level, compare and contrast the two approaches. Generate a single report with side-by-side analysis.
+Read operating_system/5levels/5levels_research.md and conduct comparative 5-level research on: "quantum computing" vs "classical supercomputing". At each level, compare and contrast the two approaches. Generate a single report with side-by-side analysis.
 ```
 
 ### Deep Dive on Specific Aspects
@@ -336,7 +336,7 @@ Read .pi/skills/5levels-explainer/5levels_research.md and conduct comparative 5-
 Target research at specific levels:
 
 ```
-Read .pi/skills/5levels-explainer/5levels_research.md. Focus especially on Level 4 (Applications & Impact) and Level 5 (Future Directions) for: "artificial general intelligence". Provide standard coverage for Levels 1-3, but exceptional depth for Levels 4-5.
+Read operating_system/5levels/5levels_research.md. Focus especially on Level 4 (Applications & Impact) and Level 5 (Future Directions) for: "artificial general intelligence". Provide standard coverage for Levels 1-3, but exceptional depth for Levels 4-5.
 ```
 
 ### Continuous Research Series
@@ -348,7 +348,7 @@ Set up cron jobs for ongoing research series:
   "name": "ai-research-series",
   "schedule": "0 10 * * 3",
   "type": "agent",
-  "job": "This is part of an ongoing AI research series. Read .pi/skills/5levels-explainer/5levels_research.md and research the next topic in this list: [transformer architectures, diffusion models, reinforcement learning from human feedback, mechanistic interpretability, AI alignment]. Check which topics have been completed in logs/ and research the next one.",
+  "job": "This is part of an ongoing AI research series. Read operating_system/5levels/5levels_research.md and research the next topic in this list: [transformer architectures, diffusion models, reinforcement learning from human feedback, mechanistic interpretability, AI alignment]. Check which topics have been completed in logs/ and research the next one.",
   "enabled": true
 }
 ```
@@ -358,7 +358,7 @@ Set up cron jobs for ongoing research series:
 Combine with other thepopebot capabilities:
 
 ```
-Read .pi/skills/5levels-explainer/5levels_research.md and conduct 5-level research on: "renewable energy storage". After completing the report, use the research findings to draft a blog post explaining the topic to a general audience. Save both the detailed report and the blog post.
+Read operating_system/5levels/5levels_research.md and conduct 5-level research on: "renewable energy storage". After completing the report, use the research findings to draft a blog post explaining the topic to a general audience. Save both the detailed report and the blog post.
 ```
 
 ## Customization Guide

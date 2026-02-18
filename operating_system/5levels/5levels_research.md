@@ -218,7 +218,7 @@ Before moving to the next level, ensure:
 
 ## Output Format
 
-Once research is complete, use the template at `.pi/skills/5levels-explainer/5levels_report_template.md` to structure your findings.
+Once research is complete, use the template at `operating_system/5levels/5levels_report_template.md` to structure your findings.
 
 The final report should be:
 - **Comprehensive:** Covers all 5 levels thoroughly
@@ -237,10 +237,10 @@ The final report should be:
 This research process is designed to work with thepopebot's trigger system. The `/5levels [keyword]` command should:
 
 1. Extract the keyword from user input
-2. Create an agent job with task: "Read .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: [keyword]"
+2. Create an agent job with task: "Read operating_system/5levels/5levels_research.md and conduct comprehensive 5-level research on: [keyword]"
 3. Agent performs research following this methodology
 4. Agent generates report using 5levels_report_template.md
-5. Agent saves completed report to `.pi/skills/5levels-explainer/5levels_report.md`
+5. Agent saves completed report to `operating_system/5levels/5levels_report.md`
 6. User receives notification with research summary
 
 ### Session Management
