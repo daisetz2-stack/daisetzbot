@@ -37,12 +37,12 @@ The chatbot recognizes `/5levels [keyword]` and immediately creates a job withou
 
 **Job template:**
 ```
-Read the file at /job/.pi/skills/5levels/SKILL.md and follow its instructions to create a bilingual 5-level explanation for: [keyword]
+Read the file at /job/.pi/skills/academic-research/SKILL.md and follow its instructions to create a bilingual 5-level explanation for: [keyword]
 
 Research thoroughly using both English and Japanese sources, generate culturally adapted content for all 5 levels in both languages, and publish to the website.
 ```
 
-### 2. Research Skill (`.pi/skills/5levels/SKILL.md`)
+### 2. Research Skill (`.pi/skills/academic-research/SKILL.md`)
 
 The skill provides detailed instructions for:
 - **Research methodology**: Where to search, what sources to use

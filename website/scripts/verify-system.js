@@ -28,11 +28,11 @@ function check(name, condition, message, isWarning = false) {
 console.log('🔍 Verifying 5Levels System Installation\n');
 
 // Check skill file
-const skillPath = path.join(__dirname, '../../.pi/skills/5levels/SKILL.md');
+const skillPath = path.join(__dirname, '../../.pi/skills/academic-research/SKILL.md');
 check(
   'Skill file',
   fs.existsSync(skillPath),
-  'SKILL.md not found at .pi/skills/5levels/'
+  'SKILL.md not found at .pi/skills/academic-research/'
 );
 
 // Check CHATBOT.md has /5levels

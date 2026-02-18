@@ -1,22 +1,49 @@
 ---
-name: 5levels
-description: Research and generate bilingual 5-level explanations (English and Japanese) with automated web publishing. Use when user requests "/5levels [keyword]" or asks for multi-level educational content.
+name: academic-research
+description: Generate bilingual educational content (English and Japanese) with academic rigor and web publishing. Creates 5-level explanations from child-friendly to expert with cross-cultural adaptation and source citations.
 ---
 
-# 5Levels Research Skill
+# Academic Research - Bilingual Educational Content Generator
 
-Generate comprehensive 5-level explanations in both English and Japanese with automated web publishing.
+Generate comprehensive bilingual educational content using the "5 Levels" methodology with academic sourcing and cultural adaptation.
 
 ## Overview
 
-This skill creates educational content using the "5 Levels" methodology - explaining concepts at increasing complexity from beginner to expert. Content is researched across both English and Japanese sources and published to a bilingual web interface.
+This skill creates educational content that explains concepts at increasing complexity from beginner to expert:
+- **Level 1**: Child (Age 5-10)
+- **Level 2**: Teen (Age 13-17)
+- **Level 3**: Undergraduate Student
+- **Level 4**: Graduate Student
+- **Level 5**: Expert
+
+Content is researched across both English and Japanese academic and educational sources, culturally adapted (not just translated), and published to a bilingual web interface.
+
+## Key Features
+
+- **Bilingual**: Parallel content in English and Japanese
+- **Cultural Adaptation**: Examples and metaphors tailored to each culture
+- **Academic Sourcing**: Wikipedia, papers (arXiv, J-STAGE), educational sites
+- **Progressive Complexity**: Each level builds on the previous
+- **Web Publishing**: Automated deployment to website
 
 ## Usage
 
-When the user types `/5levels [keyword]` in Telegram, create a job that:
-1. Researches the topic across English and Japanese sources
-2. Generates 5-level explanations in both languages
-3. Publishes to the website with proper formatting and citations
+When generating educational content on a topic:
+
+1. **Research Phase** (15-20 minutes)
+   - Search English sources (Wikipedia, Google Scholar, arXiv, news)
+   - Search Japanese sources (Wikipedia日本語版, CiNii, J-STAGE, NHK)
+   - Use brave-search skill with `--content` flag
+
+2. **Content Generation** (20-30 minutes)
+   - Write 5 levels in English (child → expert)
+   - Write 5 levels in Japanese (culturally adapted)
+   - Compile sources with proper attribution
+
+3. **Publishing** (5 minutes)
+   - Create JSON file following the data structure
+   - Save to: `website/data/topics/[slug].json`
+   - Commit and push (website auto-rebuilds)
 
 ## Data Structure
 
@@ -103,57 +130,55 @@ Each topic follows this JSON structure:
 }
 ```
 
-## Research Guidelines
+## Research Sources
 
-### Sources to Search
-
-**English:**
+### English Sources
 - Wikipedia (foundational concepts)
-- Educational sites (Khan Academy, Coursera, MIT OCW)
 - Academic papers (Google Scholar, arXiv)
+- Educational sites (Khan Academy, Coursera, MIT OCW)
 - News articles (recent developments)
-- X/Twitter discourse (current debates)
-- Reddit discussions (community perspectives)
+- X/Twitter (current debates)
+- Reddit (community perspectives)
 
-**Japanese:**
+### Japanese Sources
 - Wikipedia日本語版
-- Educational sites (NHK高校講座, JMOOC)
 - Academic sources (CiNii, J-STAGE)
+- Educational sites (NHK高校講座, JMOOC)
 - News (NHK, Nikkei, Asahi)
 - X/Twitter (Japanese discourse)
 - はてなブックマーク (community insights)
 
-### Content Requirements
+## Content Requirements by Level
 
-**Level 1 (Child):**
-- Use simple everyday language
+### Level 1 (Child)
+- Simple everyday language
 - Concrete examples from daily life
 - No jargon or technical terms
 - Focus on "what" not "why"
 - 2-3 short paragraphs
 
-**Level 2 (Teen):**
-- Add some detail and context
-- Relatable scenarios for that age group
+### Level 2 (Teen)
+- Add detail and context
+- Relatable scenarios
 - Basic mechanisms explained
 - Light introduction to "why"
 - 3-4 paragraphs
 
-**Level 3 (Undergraduate):**
+### Level 3 (Undergraduate)
 - Technical terminology introduced
 - Academic frameworks
 - Historical context
 - Current applications
 - 4-5 paragraphs
 
-**Level 4 (Graduate):**
+### Level 4 (Graduate)
 - Advanced concepts and theory
 - Research methodologies
 - Interdisciplinary connections
 - Critical analysis
 - 5-6 paragraphs
 
-**Level 5 (Expert):**
+### Level 5 (Expert)
 - Cutting-edge research
 - Unsolved problems
 - Debates in the field
@@ -161,15 +186,15 @@ Each topic follows this JSON structure:
 - Future directions
 - 6-8 paragraphs
 
-### Cultural Adaptation
+## Cultural Adaptation
 
-Don't just translate - adapt examples and context:
+**Don't just translate - adapt examples and context:**
 - **English**: Western examples, US/UK cultural references
 - **Japanese**: Japanese examples, local cultural context
 - Different metaphors that resonate in each culture
 - Region-specific applications and challenges
 
-### Quality Standards
+## Quality Standards
 
 - Each level should be self-contained
 - Clear progression in complexity
@@ -178,63 +203,55 @@ Don't just translate - adapt examples and context:
 - Highlight what remains unknown or debated
 - Cultural nuance, not direct translation
 
-## Implementation Steps
+## Example Research Workflow
 
-1. **Research Phase** (15-20 minutes)
-   ```bash
-   cd /job/.pi/skills/brave-search
-   ./search.js "[keyword] basics explanation" -n 10 --content
-   ./search.js "[keyword] advanced concepts" -n 10 --content
-   ./search.js "[keyword] research current" -n 10 --content --freshness pm
-   ./search.js "[キーワード] 説明" -n 10 --content --country JP
-   ./search.js "[キーワード] 研究" -n 10 --content --country JP
-   ```
+```bash
+# Research English sources
+cd /job/.pi/skills/brave-search
+./search.js "quantum computing basics explanation" -n 10 --content
+./search.js "quantum computing advanced concepts" -n 10 --content
+./search.js "quantum computing research current" -n 10 --content --freshness pm
 
-2. **Content Generation** (20-30 minutes)
-   - Write Level 1-5 in English
-   - Write Level 1-5 in Japanese (culturally adapted)
-   - Compile sources with proper attribution
+# Research Japanese sources
+./search.js "量子コンピューティング 説明" -n 10 --content --country JP
+./search.js "量子コンピューティング 研究" -n 10 --content --country JP
+./search.js "量子コンピューティング 最新" -n 10 --content --country JP --freshness pm
 
-3. **Publishing** (5 minutes)
-   ```bash
-   # Add to data file
-   node /job/website/scripts/add-topic.js path/to/topic.json
-   
-   # Website automatically rebuilds and deploys
-   ```
+# Generate JSON following data structure above
+# Save to: website/data/topics/quantum-computing.json
+
+# Commit
+git add website/data/topics/quantum-computing.json
+git commit -m "Add academic content: quantum computing (EN/JA)"
+```
 
 ## File Locations
 
-- **Data**: `/job/website/data/topics/[slug].json`
-- **Website**: `/job/website/`
-- **Scripts**: `/job/website/scripts/`
+- **Output**: `website/data/topics/[slug].json`
+- **Website**: `website/`
+- **Scripts**: `website/scripts/`
 
-## Example Workflow
+## Integration
 
-```bash
-# User sends: /5levels quantum computing
-
-# 1. Research
-cd /job/.pi/skills/brave-search
-./search.js "quantum computing basics explanation" -n 10 --content
-./search.js "quantum computing applications current" -n 10 --content --freshness pm
-./search.js "quantum computing research" -n 10 --content
-./search.js "量子コンピューティング 説明" -n 10 --content --country JP
-./search.js "量子コンピューティング 研究" -n 10 --content --country JP
-
-# 2. Generate content (see template above)
-# Create: /job/website/data/topics/quantum-computing.json
-
-# 3. Verify and commit
-git add website/data/topics/quantum-computing.json
-git commit -m "Add 5levels: quantum computing"
-```
+This skill integrates with:
+- **brave-search**: For multilingual web research
+- **Website**: Automated publishing via Git commit
+- **Telegram**: For command triggers and notifications
 
 ## Tips
 
-- Use Brave Search's `--content` flag to get full article text
+- Use Brave Search's `--content` flag for full article text
 - Search in both languages separately - don't just translate queries
 - Look for cultural differences in how topics are taught
 - Level 5 should include what experts are currently debating
 - Include sources from the last month for recent developments
-- Balance foundational sources (books, established papers) with recent news
+- Balance foundational sources with recent research
+- Verify technical terms have accurate Japanese translations
+- Test examples resonate in target culture
+
+## Duration
+
+- Research: 15-20 minutes
+- Content generation: 20-30 minutes  
+- Publishing: 5 minutes
+- **Total: 40-55 minutes**

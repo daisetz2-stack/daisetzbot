@@ -6,7 +6,7 @@ Complete testing checklist for the `/5levels` command system.
 
 ### 1. Skill Installation
 
-- [ ] Skill file exists: `.pi/skills/5levels/SKILL.md`
+- [ ] Skill file exists: `.pi/skills/academic-research/SKILL.md`
 - [ ] Skill is properly formatted with front matter
 - [ ] Research guidelines are comprehensive
 - [ ] Data structure examples are correct
