@@ -106,7 +106,7 @@ A complete, production-ready research agent system that enables thepopebot to co
 ## 📁 Directory Structure
 
 ```
-operating_system/5levels/
+.pi/skills/5levels-explainer/
 ├── 5levels_research.md          [12 KB] - Research methodology
 ├── 5levels_report_template.md   [19 KB] - Report structure
 ├── 5levels_report.md            [79 KB] - Example report (Neural Networks)
@@ -411,7 +411,7 @@ The 5 Levels Research System is considered successful when:
 ## ✅ Acceptance Criteria Met
 
 **Requirement 1: Create folder structure**
-✅ Created `operating_system/5levels/` directory
+✅ Created `.pi/skills/5levels-explainer/` directory
 ✅ Organized all files in this location
 
 **Requirement 2: Create core files**

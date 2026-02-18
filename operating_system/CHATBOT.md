@@ -69,7 +69,7 @@ Generate a comprehensive 5-level explanation in both English and Japanese.
 
 **Job template for /5levels:**
 ```
-Read the file at /job/.pi/skills/5levels/SKILL.md and follow its instructions to create a bilingual 5-level explanation for: [keyword]
+Read the file at /job/.pi/skills/5levels-explainer/SKILL.md and follow its instructions to create a bilingual 5-level explanation for: [keyword]
 
 Research thoroughly using both English and Japanese sources, generate culturally adapted content for all 5 levels in both languages, and publish to the website.
 ```
