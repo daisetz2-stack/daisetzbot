@@ -1,6 +1,8 @@
 # Academic Research Analysis - Job Completion Report
 
-## ✓ Job Status: COMPLETED
+> **⚠️ DEPRECATED:** This report documents the legacy academic research system at `operating_system/academic_research/` which has been replaced by a proper skill implementation at `.pi/skills/academic-research/`. The new skill provides the same functionality via the `/academic_research` slash command. See `.pi/skills/academic-research/SKILL.md` for current documentation.
+
+## ✓ Job Status: COMPLETED (LEGACY SYSTEM)
 
 **Topic Analyzed:** Knowledge Graph  
 **Methodology Used:** `operating_system/academic_research/academic_research.md`  
