@@ -1,11 +1,11 @@
 ---
-name: 5levels
-description: Research and generate bilingual 5-level explanations (English and Japanese) with automated web publishing. Use when user requests "/5levels [keyword]" or asks for multi-level educational content.
+name: academic-research
+description: Deep literature analysis with evidence extraction, claim grouping, tension detection, and research map generation. Use for academic research requiring grounded intelligence with traceable evidence from scholarly papers.
 ---
 
-# 5Levels Research Skill v2.0
+# Academic Research Skill v2.0
 
-Generate comprehensive 5-level explanations with **grounded academic intelligence** - dense knowledge synthesis backed by traceable evidence.
+Generate comprehensive research maps with **grounded academic intelligence** - dense knowledge synthesis backed by traceable evidence from scholarly literature.
 
 ## Core Philosophy
 
@@ -94,7 +94,7 @@ Maximum **300 tokens** for synthesis prose. Evidence snapshot preserved regardle
 ### Command Line
 
 ```bash
-cd /job/.pi/skills/5levels
+cd /job/.pi/skills/academic-research
 ./research-pipeline.mjs "quantum computing" --papers=10 --tokens=300 --evidence=6
 ```
 
@@ -121,9 +121,15 @@ const results = await runResearch('machine learning', {
 console.log(results.synthesis);
 ```
 
-## Integration with 5Levels Website
+## Relationship to 5levels-explainer Skill
 
-After generating research map, adapt it into 5 educational levels:
+This academic-research skill generates **research maps** (evidence-based synthesis), which can optionally be adapted into progressive educational content.
+
+The **5levels-explainer** skill handles the `/5levels` command and creates bilingual progressive explanations.
+
+### Optional: Adapting Research Maps to Educational Levels
+
+After generating a research map, you can adapt it into 5 educational levels:
 
 ### Level 1 (Child 5-10)
 - Use FUNDAMENTALS section
@@ -163,7 +169,7 @@ Don't just translate - adapt:
 
 ```bash
 # 1. Generate research map
-cd /job/.pi/skills/5levels
+cd /job/.pi/skills/academic-research
 ./research-pipeline.mjs "quantum computing" > /job/tmp/quantum-research.md
 
 # 2. Review output
@@ -184,7 +190,7 @@ node /job/website/scripts/add-topic.js /job/tmp/quantum-topic.json
 ## Files Structure
 
 ```
-.pi/skills/5levels/
+.pi/skills/academic-research/
 ├── research-pipeline.mjs      # Main orchestrator
 ├── sources/
 │   ├── openalex.mjs           # Primary source
