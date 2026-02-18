@@ -26,7 +26,7 @@
 │                      JOB CREATION LAYER                              │
 ├──────────────────────────────────────────────────────────────────────┤
 │                                                                      │
-│  Task: "Read operating_system/5levels/5levels_research.md           │
+│  Task: "Read .pi/skills/5levels-explainer/5levels_research.md           │
 │         and conduct comprehensive 5-level research on: [keyword]"   │
 │                                                                      │
 │  Creates:  job/[uuid] branch                                        │
