@@ -1,0 +1,12 @@
+{
+  "name": "5levels-research",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Grounded academic intelligence system for 5-level educational content",
+  "scripts": {
+    "research": "node research-pipeline.mjs"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

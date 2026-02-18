@@ -3,238 +3,223 @@ name: 5levels
 description: Research and generate bilingual 5-level explanations (English and Japanese) with automated web publishing. Use when user requests "/5levels [keyword]" or asks for multi-level educational content.
 ---
 
-# 5Levels Research Skill
+# 5Levels Research Skill v2.0
 
-Generate comprehensive 5-level explanations in both English and Japanese with automated web publishing.
+Generate comprehensive 5-level explanations with **grounded academic intelligence** - dense knowledge synthesis backed by traceable evidence.
 
-## Overview
+## Core Philosophy
 
-This skill creates educational content using the "5 Levels" methodology - explaining concepts at increasing complexity from beginner to expert. Content is researched across both English and Japanese sources and published to a bilingual web interface.
+**Prioritize substance over process.** Every synthesis statement must reference evidence. Focus on teaching actual subject matter, not describing research methodology.
 
-## Usage
+## Research Pipeline
 
-When the user types `/5levels [keyword]` in Telegram, create a job that:
-1. Researches the topic across English and Japanese sources
-2. Generates 5-level explanations in both languages
-3. Publishes to the website with proper formatting and citations
+The system uses a lightweight academic intelligence pipeline:
 
-## Data Structure
+1. **Multi-source abstract retrieval** (OpenAlex primary, CORE fallback)
+2. **Evidence extraction** - atomic knowledge units from abstracts
+3. **Claim grouping** - deterministic clustering at 60% similarity
+4. **Tension detection** - disputes vs consensus identification
+5. **Five-level synthesis** - structured knowledge output
 
-Each topic follows this JSON structure:
+### Evidence Objects
 
-```json
+Each claim is extracted as an atomic knowledge unit:
+
+```javascript
 {
-  "id": "unique-slug",
-  "keyword": {
-    "en": "English Keyword",
-    "ja": "日本語キーワード"
-  },
-  "created": "2026-02-14T16:00:00Z",
-  "colors": {
-    "level1": "#E3B341",
-    "level2": "#E07A3F",
-    "level3": "#C06C84",
-    "level4": "#4C78A8",
-    "level5": "#2A8F87"
-  },
-  "levels": {
-    "en": [
-      {
-        "level": 1,
-        "title": "Child (Age 5-10)",
-        "content": "Simple explanation with everyday examples..."
-      },
-      {
-        "level": 2,
-        "title": "Teen (Age 13-17)",
-        "content": "More detail with relatable scenarios..."
-      },
-      {
-        "level": 3,
-        "title": "Undergraduate Student",
-        "content": "Technical concepts with academic context..."
-      },
-      {
-        "level": 4,
-        "title": "Graduate Student",
-        "content": "Advanced concepts with research context..."
-      },
-      {
-        "level": 5,
-        "title": "Expert",
-        "content": "Deep dive with unsolved problems and cutting-edge research..."
-      }
-    ],
-    "ja": [
-      {
-        "level": 1,
-        "title": "子ども（5〜10歳）",
-        "content": "日常的な例を使ったシンプルな説明..."
-      },
-      {
-        "level": 2,
-        "title": "ティーンエイジャー（13〜17歳）",
-        "content": "身近なシナリオを使った詳細な説明..."
-      },
-      {
-        "level": 3,
-        "title": "大学生",
-        "content": "学術的な文脈を持つ技術的な概念..."
-      },
-      {
-        "level": 4,
-        "title": "大学院生",
-        "content": "研究の文脈を持つ高度な概念..."
-      },
-      {
-        "level": 5,
-        "title": "専門家",
-        "content": "未解決問題と最先端研究を含む深い考察..."
-      }
-    ]
-  },
-  "sources": [
-    {
-      "title": "Source Title",
-      "url": "https://example.com",
-      "language": "en"
-    }
-  ]
+  claim: "specific finding from paper",
+  findingDirection: "positive|negative|neutral|mixed",
+  method: "experimental|observational|computational|...",
+  domainContext: "extracted from paper metadata",
+  uncertaintyFlag: boolean,
+  evidenceStrength: 0.0-1.0
 }
 ```
 
-## Research Guidelines
+### Strategic Paper Selection
 
-### Sources to Search
+The system selects **8-12 papers strategically**:
+- **3-4 high-citation anchors** (established findings)
+- **3-4 recent frontier** (last 2 years)
+- **1-2 surveys** (review papers)
+- **Remainder for gaps** (under-studied areas)
 
-**English:**
-- Wikipedia (foundational concepts)
-- Educational sites (Khan Academy, Coursera, MIT OCW)
-- Academic papers (Google Scholar, arXiv)
-- News articles (recent developments)
-- X/Twitter discourse (current debates)
-- Reddit discussions (community perspectives)
+## Output Format: Research Map
 
-**Japanese:**
-- Wikipedia日本語版
-- Educational sites (NHK高校講座, JMOOC)
-- Academic sources (CiNii, J-STAGE)
-- News (NHK, Nikkei, Asahi)
-- X/Twitter (Japanese discourse)
-- はてなブックマーク (community insights)
+Maximum **300 tokens** for synthesis prose. Evidence snapshot preserved regardless of token limit.
 
-### Content Requirements
+```markdown
+# 🔬 Research Map: [Query]
 
-**Level 1 (Child):**
-- Use simple everyday language
+## Summary
+[3 sentences: what we know, what's debated, what's unknown]
+
+## FUNDAMENTALS
+*What is widely accepted*
+[Dense knowledge with evidence IDs]
+
+## CURRENT STATE
+*Dominant approaches and prevailing methods*
+[Actual research findings with evidence IDs]
+
+## CUTTING EDGE
+*Where disagreement or experimentation exists*
+[Specific disputes/experiments with evidence IDs]
+
+## IMPLICATIONS
+*Why disagreements matter in practice*
+[Practical consequences]
+
+## META
+*What remains unknown and why*
+[Concrete unknowns and research priorities]
+
+## Evidence Snapshot
+[Top 6 papers with specific claims, citations, strength scores]
+
+### Research Metadata
+[Papers analyzed, consensus areas, disputes, gaps, risks]
+```
+
+## Quality Guardrails
+
+1. **Traceability**: Every synthesis statement → ≥1 evidence ID
+2. **Substance over process**: Teach subject matter, not methodology
+3. **Token discipline**: ≤300 tokens for prose, truncate if needed
+4. **Evidence grounding**: All claims traceable to source papers
+5. **No meta-commentary**: Eliminate "we studied" → focus on "we learned"
+
+## Usage
+
+### Command Line
+
+```bash
+cd /job/.pi/skills/5levels
+./research-pipeline.mjs "quantum computing" --papers=10 --tokens=300 --evidence=6
+```
+
+### Options
+
+- `--papers N` - Target number of papers (default: 10)
+- `--tokens N` - Max output tokens (default: 300)
+- `--evidence N` - Max evidence objects in snapshot (default: 6)
+- `--similarity N` - Claim grouping threshold 0-1 (default: 0.6)
+- `--no-core` - Disable CORE fallback
+- `--format FORMAT` - Output format: markdown|json|both
+
+### Programmatic
+
+```javascript
+import { runResearch } from './research-pipeline.mjs';
+
+const results = await runResearch('machine learning', {
+  targetPapers: 10,
+  maxOutputTokens: 300,
+  maxEvidence: 6
+});
+
+console.log(results.synthesis);
+```
+
+## Integration with 5Levels Website
+
+After generating research map, adapt it into 5 educational levels:
+
+### Level 1 (Child 5-10)
+- Use FUNDAMENTALS section
+- Simplify to everyday language
 - Concrete examples from daily life
-- No jargon or technical terms
-- Focus on "what" not "why"
-- 2-3 short paragraphs
 
-**Level 2 (Teen):**
-- Add some detail and context
-- Relatable scenarios for that age group
+### Level 2 (Teen 13-17)
+- Expand FUNDAMENTALS + light CURRENT STATE
+- Add relatable scenarios
 - Basic mechanisms explained
-- Light introduction to "why"
-- 3-4 paragraphs
 
-**Level 3 (Undergraduate):**
+### Level 3 (Undergraduate)
+- FUNDAMENTALS + CURRENT STATE fully
 - Technical terminology introduced
 - Academic frameworks
-- Historical context
-- Current applications
-- 4-5 paragraphs
 
-**Level 4 (Graduate):**
+### Level 4 (Graduate)
+- All sections through IMPLICATIONS
 - Advanced concepts and theory
-- Research methodologies
-- Interdisciplinary connections
 - Critical analysis
-- 5-6 paragraphs
 
-**Level 5 (Expert):**
-- Cutting-edge research
+### Level 5 (Expert)
+- Complete research map including CUTTING EDGE + META
 - Unsolved problems
-- Debates in the field
-- Cultural/regional differences
 - Future directions
-- 6-8 paragraphs
 
-### Cultural Adaptation
+## Cultural Adaptation for Japanese
 
-Don't just translate - adapt examples and context:
-- **English**: Western examples, US/UK cultural references
-- **Japanese**: Japanese examples, local cultural context
-- Different metaphors that resonate in each culture
-- Region-specific applications and challenges
+Don't just translate - adapt:
 
-### Quality Standards
-
-- Each level should be self-contained
-- Clear progression in complexity
-- Cite 2-3 sources per level minimum
-- Include both foundational and recent sources
-- Highlight what remains unknown or debated
-- Cultural nuance, not direct translation
-
-## Implementation Steps
-
-1. **Research Phase** (15-20 minutes)
-   ```bash
-   cd /job/.pi/skills/brave-search
-   ./search.js "[keyword] basics explanation" -n 10 --content
-   ./search.js "[keyword] advanced concepts" -n 10 --content
-   ./search.js "[keyword] research current" -n 10 --content --freshness pm
-   ./search.js "[キーワード] 説明" -n 10 --content --country JP
-   ./search.js "[キーワード] 研究" -n 10 --content --country JP
-   ```
-
-2. **Content Generation** (20-30 minutes)
-   - Write Level 1-5 in English
-   - Write Level 1-5 in Japanese (culturally adapted)
-   - Compile sources with proper attribution
-
-3. **Publishing** (5 minutes)
-   ```bash
-   # Add to data file
-   node /job/website/scripts/add-topic.js path/to/topic.json
-   
-   # Website automatically rebuilds and deploys
-   ```
-
-## File Locations
-
-- **Data**: `/job/website/data/topics/[slug].json`
-- **Website**: `/job/website/`
-- **Scripts**: `/job/website/scripts/`
+- **Examples**: Western → Japanese cultural context
+- **Metaphors**: Culture-appropriate analogies
+- **Applications**: Region-specific challenges
+- **Sources**: Include Japanese academic sources (J-STAGE, CiNii)
 
 ## Example Workflow
 
 ```bash
-# User sends: /5levels quantum computing
+# 1. Generate research map
+cd /job/.pi/skills/5levels
+./research-pipeline.mjs "quantum computing" > /job/tmp/quantum-research.md
 
-# 1. Research
-cd /job/.pi/skills/brave-search
-./search.js "quantum computing basics explanation" -n 10 --content
-./search.js "quantum computing applications current" -n 10 --content --freshness pm
-./search.js "quantum computing research" -n 10 --content
-./search.js "量子コンピューティング 説明" -n 10 --content --country JP
-./search.js "量子コンピューティング 研究" -n 10 --content --country JP
+# 2. Review output
+cat /job/tmp/quantum-research.md
 
-# 2. Generate content (see template above)
-# Create: /job/website/data/topics/quantum-computing.json
+# 3. Adapt to 5 levels (manual or LLM-assisted)
+# Create JSON structure per level
 
-# 3. Verify and commit
-git add website/data/topics/quantum-computing.json
-git commit -m "Add 5levels: quantum computing"
+# 4. Publish to website
+node /job/website/scripts/add-topic.js /job/tmp/quantum-topic.json
+```
+
+## Environment Variables
+
+- `CORE_API_KEY` - (Optional) CORE API key for better rate limits
+- `ANTHROPIC_API_KEY` - For LLM-assisted level generation
+
+## Files Structure
+
+```
+.pi/skills/5levels/
+├── research-pipeline.mjs      # Main orchestrator
+├── sources/
+│   ├── openalex.mjs           # Primary source
+│   └── core.mjs               # Fallback source
+├── analysis/
+│   ├── evidence-extractor.mjs # Extract atomic claims
+│   ├── claim-grouper.mjs      # Group similar claims
+│   └── tension-detector.mjs   # Detect disputes/consensus
+├── synthesis/
+│   └── five-level.mjs         # Generate research map
+└── utils/
+    └── formatter.mjs          # Output formatting
 ```
 
 ## Tips
 
-- Use Brave Search's `--content` flag to get full article text
-- Search in both languages separately - don't just translate queries
-- Look for cultural differences in how topics are taught
-- Level 5 should include what experts are currently debating
-- Include sources from the last month for recent developments
-- Balance foundational sources (books, established papers) with recent news
+- **High-quality abstracts**: System depends on abstract quality, not full text
+- **Citation weight**: High-citation papers anchor FUNDAMENTALS
+- **Recency**: Last 2 years define CUTTING EDGE
+- **Disputes**: Flag disagreements explicitly in CUTTING EDGE
+- **Gaps**: Make META actionable - specify what's unknown and why it matters
+- **Token discipline**: If over 300 tokens, truncate prose but keep evidence
+- **Evidence tracing**: Use `[id]` inline references throughout synthesis
+
+## What Changed from v1.0
+
+**Old system**: Meta-commentary about research process, generic findings, verbose pipeline descriptions
+
+**New system**: 
+- Dense knowledge synthesis with evidence IDs
+- Atomic claim extraction from abstracts
+- Deterministic grouping with similarity detection
+- Tension/consensus detection
+- Strict 300-token discipline
+- Evidence snapshot always included
+- Focus on substantive findings
+
+The goal: **Users can read and learn**, not wade through meta-analysis.
