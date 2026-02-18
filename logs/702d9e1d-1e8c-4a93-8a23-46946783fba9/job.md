@@ -1,0 +1,1 @@
+Test the academic research skill by using the `/academic_research` slash command to research "Knowledge Graph" as requested. This will verify that the skill is working correctly after removing the conflicting old folder from operating_system/.
