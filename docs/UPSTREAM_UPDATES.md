@@ -1,8 +1,85 @@
 # Upstream Updates Guide
 
-This guide explains how to pull updates from the thepopebot template while preserving your customizations.
+This guide explains how to manage updates from the thepopebot template, including both **automatic update checking** and manual merge procedures.
 
-## Overview
+## 🤖 Automatic Updates (Recommended)
+
+thepopebot includes an automatic upstream update checker that runs daily, detects new commits, and creates a PR with the changes. This is the easiest way to stay up-to-date!
+
+### How It Works
+
+1. **Scheduled check** runs daily (2am by default) via cron job
+2. **Detection** compares upstream commits with your last sync
+3. **Agent job** automatically merges updates when found
+4. **PR created** with summary of changes
+5. **Notification** sent via Telegram with details
+6. **Auto-merge** (if enabled) merges the PR automatically
+
+### Enable Automatic Updates
+
+Automatic updates are controlled by the `upstream-update-check` cron job in `operating_system/CRONS.json`:
+
+```json
+{
+  "name": "upstream-update-check",
+  "schedule": "0 2 * * *",
+  "type": "command",
+  "command": "bash check-upstream-updates.sh",
+  "enabled": true
+}
+```
+
+**Set `"enabled": true`** to enable automatic checking.
+
+### Configure Update Frequency
+
+Edit the `schedule` field using cron syntax:
+
+| Schedule | Frequency |
+|----------|-----------|
+| `0 2 * * *` | Daily at 2am (default) |
+| `0 */12 * * *` | Every 12 hours |
+| `0 0 * * 0` | Weekly on Sunday |
+| `0 0 1 * *` | Monthly on 1st |
+
+### Manual Check
+
+Trigger an update check manually via Telegram:
+```
+Check for upstream updates
+```
+
+Or run the script directly:
+```bash
+cd event_handler/cron
+bash check-upstream-updates.sh
+```
+
+### View Update Status
+
+Check the state file to see when updates were last checked:
+```bash
+cat event_handler/cron/.upstream-state.json
+```
+
+Shows:
+- `last_commit` - Last upstream commit we synced to
+- `last_check` - When we last checked for updates
+- `update_count` - Number of updates detected
+- `last_update_found` - When the most recent update was found
+
+### Disable Automatic Updates
+
+To pause automatic checks, set `"enabled": false` in CRONS.json:
+
+```json
+{
+  "name": "upstream-update-check",
+  "enabled": false
+}
+```
+
+## 📚 Architecture Overview
 
 The thepopebot repository uses a **custom/core separation** architecture:
 
