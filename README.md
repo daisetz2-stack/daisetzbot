@@ -14,6 +14,8 @@
 
 **Self-evolving** — The agent modifies its own code through pull requests. Every change is auditable, every change is reversible. You stay in control.
 
+**Automatic upstream updates** — The bot monitors the upstream repository daily and automatically merges new features, bug fixes, and security patches while preserving your customizations. All updates create PRs you can review before merging.
+
 **Built-in features** — Includes a `/5levels` command system that generates bilingual (English/Japanese) educational explanations from child to expert level, with automatic web publishing. See `docs/QUICKSTART_5LEVELS.md`.
 
 ---
@@ -124,6 +126,8 @@ The wizard handles everything:
 | [Architecture](docs/ARCHITECTURE.md) | Two-layer design, file structure, API endpoints, GitHub Actions, Docker agent |
 | [Configuration](docs/CONFIGURATION.md) | Environment variables, GitHub secrets, repo variables, ngrok, Telegram setup |
 | [Customization](docs/CUSTOMIZATION.md) | Personality, skills, operating system files, using your bot, security details |
+| [Automatic Updates](docs/AUTOMATIC_UPDATES.md) | Automatic upstream update system, configuration, monitoring |
+| [Upstream Updates](docs/UPSTREAM_UPDATES.md) | Manual merge procedures, custom/core architecture, conflict resolution |
 | [Auto-Merge](docs/AUTO_MERGE.md) | Auto-merge controls, ALLOWED_PATHS configuration |
 | [How to Use Pi](docs/HOW_TO_USE_PI.md) | Guide to the Pi coding agent |
 | [Security](docs/SECURITY_TODO.md) | Security hardening plan |

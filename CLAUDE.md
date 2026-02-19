@@ -140,6 +140,69 @@ thepopebot uses a **custom/core separation** pattern for clean upstream updates:
 
 See [docs/UPSTREAM_UPDATES.md](/docs/UPSTREAM_UPDATES.md) for detailed workflow.
 
+## Automatic Upstream Updates
+
+thepopebot includes an **automatic update system** that monitors the upstream repository and merges changes automatically:
+
+### How It Works
+
+1. **Scheduled Check** - Cron job runs daily (2am default) via `event_handler/cron/check-upstream-updates.sh`
+2. **Detection** - Fetches latest commits from upstream via GitHub API
+3. **Comparison** - Compares with last processed commit (stored in `.upstream-state.json`)
+4. **Agent Job** - Creates job to merge updates if new commits found
+5. **PR Created** - Agent merges changes and creates PR with summary
+6. **Auto-Merge** - PR auto-merges if `AUTO_MERGE` enabled and paths allowed
+7. **Notification** - Telegram notification sent with update details
+
+### Configuration
+
+**Enable/Disable** - In `operating_system/CRONS.json`:
+```json
+{
+  "name": "upstream-update-check",
+  "schedule": "0 2 * * *",
+  "type": "command",
+  "command": "bash check-upstream-updates.sh",
+  "enabled": true  // Set to false to disable
+}
+```
+
+**Update Frequency** - Change `schedule` field:
+- `0 2 * * *` - Daily at 2am (default)
+- `0 */12 * * *` - Every 12 hours
+- `0 0 * * 0` - Weekly on Sunday
+
+**Auto-Merge Control** - GitHub repository variables:
+- `AUTO_MERGE=false` - Require manual PR review
+- `ALLOWED_PATHS=/logs,/docs` - Only auto-merge specific paths
+
+### Components
+
+- **`event_handler/cron/check-upstream-updates.sh`** - Update detection script
+- **`event_handler/cron/.upstream-state.json`** - State tracking (last commit, check time)
+- **`operating_system/UPSTREAM_MERGE.md`** - Agent instructions for merging
+- **`.pi/skills/upstream-updates/SKILL.md`** - Manual management commands
+
+### Manual Operations
+
+**Check now:**
+```bash
+cd event_handler/cron
+bash check-upstream-updates.sh
+```
+
+**View state:**
+```bash
+cat event_handler/cron/.upstream-state.json
+```
+
+**Via Telegram:**
+```
+Check for upstream updates
+```
+
+See [docs/AUTOMATIC_UPDATES.md](/docs/AUTOMATIC_UPDATES.md) for complete documentation.
+
 ## Key Files
 
 | File | Purpose |

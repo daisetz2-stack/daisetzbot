@@ -1,0 +1,7 @@
+# Upstream state tracking
+.upstream-state.json
+
+# Temporary files from update checks
+/tmp/
+*.tmp
+*.log
