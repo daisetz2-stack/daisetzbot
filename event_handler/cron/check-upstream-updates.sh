@@ -48,11 +48,21 @@ if [ "$HTTP_CODE" != "200" ]; then
   exit 1
 fi
 
-# Parse response
-LATEST_SHA=$(echo "$BODY" | grep -o '"sha":"[^"]*"' | head -1 | cut -d'"' -f4)
-LATEST_DATE=$(echo "$BODY" | grep -o '"date":"[^"]*"' | head -1 | cut -d'"' -f4)
-COMMIT_MSG=$(echo "$BODY" | grep -o '"message":"[^"]*"' | head -1 | cut -d'"' -f4 | sed 's/\\n/ /g')
-AUTHOR=$(echo "$BODY" | grep -o '"name":"[^"]*"' | head -2 | tail -1 | cut -d'"' -f4)
+# Parse response using Node.js for reliable JSON parsing
+PARSED=$(echo "$BODY" | node -e "
+const data = JSON.parse(require('fs').readFileSync(0, 'utf8'));
+console.log(JSON.stringify({
+  sha: data.sha,
+  date: data.commit.author.date,
+  message: data.commit.message.replace(/\n/g, ' '),
+  author: data.commit.author.name
+}));
+")
+
+LATEST_SHA=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).sha")
+LATEST_DATE=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).date")
+COMMIT_MSG=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).message")
+AUTHOR=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).author")
 
 if [ -z "$LATEST_SHA" ]; then
   error "Could not parse commit SHA from GitHub API response"
@@ -65,14 +75,19 @@ log "Author: $AUTHOR"
 log "Message: $COMMIT_MSG"
 
 # Read last checked commit
-LAST_SHA=$(grep -o '"last_commit":"[^"]*"' "$STATE_FILE" | cut -d'"' -f4)
+LAST_SHA=$(node -pe "JSON.parse(require('fs').readFileSync('$STATE_FILE', 'utf8')).last_commit")
 
 # Compare commits
 if [ "$LATEST_SHA" = "$LAST_SHA" ]; then
   log "No new updates (already at ${LATEST_SHA:0:7})"
   # Update last_check timestamp
   NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-  sed -i "s/\"last_check\":\"[^\"]*\"/\"last_check\":\"$NOW\"/" "$STATE_FILE"
+  node -e "
+    const fs = require('fs');
+    const state = JSON.parse(fs.readFileSync('$STATE_FILE', 'utf8'));
+    state.last_check = '$NOW';
+    fs.writeFileSync('$STATE_FILE', JSON.stringify(state, null, 2));
+  "
   exit 0
 fi
 
@@ -127,7 +142,7 @@ fi
 
 # Update state file
 NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-UPDATE_COUNT=$(grep -o '"update_count":[0-9]*' "$STATE_FILE" | cut -d':' -f2)
+UPDATE_COUNT=$(node -pe "JSON.parse(require('fs').readFileSync('$STATE_FILE', 'utf8')).update_count || 0")
 NEW_COUNT=$((UPDATE_COUNT + 1))
 
 cat > "$STATE_FILE" <<EOF

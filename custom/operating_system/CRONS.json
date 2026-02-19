@@ -33,7 +33,9 @@
     "type": "http",
     "url": "https://example.com/status",
     "method": "POST",
-    "vars": { "source": "heartbeat" },
+    "vars": {
+      "source": "heartbeat"
+    },
     "enabled": false
   },
   {
@@ -49,6 +51,13 @@
     "schedule": "0 14 * * 1-5",
     "type": "agent",
     "job": "Read the file at operating_system/FINANCIAL_ADVISOR/FINANCIAL_ADVISOR.md and complete the tasks described there.",
+    "enabled": true
+  },
+  {
+    "name": "upstream-update-check",
+    "schedule": "0 2 * * *",
+    "type": "command",
+    "command": "bash check-upstream-updates.sh",
     "enabled": true
   }
 ]
