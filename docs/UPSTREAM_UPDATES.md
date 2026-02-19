@@ -1,10 +1,10 @@
 # Upstream Updates Guide
 
-This guide explains how to manage updates from the thepopebot template, including both **automatic update checking** and manual merge procedures.
+This guide explains how to manage updates from the daisetz template, including both **automatic update checking** and manual merge procedures.
 
 ## 🤖 Automatic Updates (Recommended)
 
-thepopebot includes an automatic upstream update checker that runs daily, detects new commits, and creates a PR with the changes. This is the easiest way to stay up-to-date!
+daisetz includes an automatic upstream update checker that runs daily, detects new commits, and creates a PR with the changes. This is the easiest way to stay up-to-date!
 
 ### How It Works
 
@@ -81,7 +81,7 @@ To pause automatic checks, set `"enabled": false` in CRONS.json:
 
 ## 📚 Architecture Overview
 
-The thepopebot repository uses a **custom/core separation** architecture:
+The daisetz repository uses a **custom/core separation** architecture:
 
 - **Core files** (in root directories) - Get updated from upstream
 - **Custom files** (in `/custom/`) - Your customizations, protected from conflicts
@@ -119,13 +119,13 @@ This means you can safely run `git merge upstream/main` to get new features with
 If you cloned from your own fork:
 
 ```bash
-git remote add upstream https://github.com/stephengpope/thepopebot.git
+git remote add upstream https://github.com/stephengpope/daisetz.git
 git fetch upstream
 ```
 
 ### 2. Migrate Existing Customizations
 
-If you have an older thepopebot with customizations in `/operating_system/`:
+If you have an older daisetz with customizations in `/operating_system/`:
 
 ```bash
 node setup/migrate-to-custom.mjs
@@ -393,7 +393,7 @@ git commit -m "Merge upstream: Add new academic-research improvements"
 Keep notes in `custom/README.md`:
 
 ```markdown
-# My thepopebot Customizations
+# My daisetz Customizations
 
 - Custom SOUL.md: Added financial advisor personality
 - Custom skills: pdf-processor, email-handler
@@ -414,7 +414,7 @@ If you run into issues with upstream updates:
 
 ## Version Compatibility
 
-The custom/core separation was introduced in thepopebot v2.0. If you're upgrading from v1.x:
+The custom/core separation was introduced in daisetz v2.0. If you're upgrading from v1.x:
 
 ```bash
 # 1. Fetch latest

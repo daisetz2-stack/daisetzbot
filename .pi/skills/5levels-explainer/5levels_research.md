@@ -234,7 +234,7 @@ The final report should be:
 
 ### Trigger Setup
 
-This research process is designed to work with thepopebot's trigger system. The `/5levels [keyword]` command should:
+This research process is designed to work with daisetz's trigger system. The `/5levels [keyword]` command should:
 
 1. Extract the keyword from user input
 2. Create an agent job with task: "Read .pi/skills/5levels-explainer/5levels_research.md and conduct comprehensive 5-level research on: [keyword]"

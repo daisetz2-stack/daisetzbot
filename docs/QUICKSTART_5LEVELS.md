@@ -6,7 +6,7 @@ Get started with the `/5levels` command system in under 5 minutes.
 
 ### Creating a 5Levels Explanation
 
-1. **Open Telegram** and message your thepopebot
+1. **Open Telegram** and message your daisetz
 2. **Send the command**: `/5levels [topic]`
    ```
    /5levels quantum computing
@@ -39,7 +39,7 @@ A bilingual webpage with:
 1. **Clone the repo**:
    ```bash
    git clone [your-repo-url]
-   cd thepopebot
+   cd daisetz
    ```
 
 2. **Set up the website**:

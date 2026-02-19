@@ -2,7 +2,7 @@
 
 ## Overview
 
-The 5 Levels Research Agent System enables thepopebot to perform comprehensive, multi-level research on any given keyword or topic. When triggered with `/5levels [keyword]`, the agent conducts progressive research from foundational understanding to cutting-edge developments, producing a detailed, well-sourced report.
+The 5 Levels Research Agent System enables daisetz to perform comprehensive, multi-level research on any given keyword or topic. When triggered with `/5levels [keyword]`, the agent conducts progressive research from foundational understanding to cutting-edge developments, producing a detailed, well-sourced report.
 
 ## System Architecture
 
@@ -94,7 +94,7 @@ Notification to User
 - Unsolved problems and expert debates
 - Future predictions and frontier research
 
-## Integration with thepopebot
+## Integration with daisetz
 
 ### Option 1: Telegram Command via Chat Interface
 
@@ -316,7 +316,7 @@ To improve the 5 Levels system:
 
 ## License
 
-Part of thepopebot system. See repository LICENSE file.
+Part of daisetz system. See repository LICENSE file.
 
 ---
 

@@ -9,7 +9,7 @@ This template defines the standard structure for all 5 Levels research reports. 
 # 5 Levels Report: [KEYWORD/TOPIC]
 
 **Research Date:** [YYYY-MM-DD]  
-**Agent:** thepopebot  
+**Agent:** daisetz  
 **Report Version:** 1.0
 
 ---

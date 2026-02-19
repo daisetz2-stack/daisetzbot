@@ -2,7 +2,7 @@
 
 ## What Was Built
 
-A complete research agent system that enables thepopebot to conduct comprehensive, multi-level research on any topic through the `/5levels [keyword]` command.
+A complete research agent system that enables daisetz to conduct comprehensive, multi-level research on any topic through the `/5levels [keyword]` command.
 
 ### Created Files
 
@@ -39,7 +39,7 @@ A complete research agent system that enables thepopebot to conduct comprehensiv
 
 Before integrating the 5 Levels system, ensure:
 
-- [x] thepopebot is operational
+- [x] daisetz is operational
 - [x] brave-search skill is installed and configured
 - [x] BRAVE_API_KEY is set in LLM_SECRETS
 - [x] Event handler is running
@@ -355,7 +355,7 @@ Set up cron jobs for ongoing research series:
 
 ### Integration with Other Skills
 
-Combine with other thepopebot capabilities:
+Combine with other daisetz capabilities:
 
 ```
 Read .pi/skills/5levels-explainer/5levels_research.md and conduct 5-level research on: "renewable energy storage". After completing the report, use the research findings to draft a blog post explaining the topic to a general audience. Save both the detailed report and the blog post.
@@ -554,7 +554,7 @@ Challenging test topics (emerging, ambiguous, or limited info):
 
 ## Conclusion
 
-The 5 Levels Research System provides thepopebot with powerful autonomous research capabilities. By following this integration guide, you can enable comprehensive research on any topic, delivered through flexible trigger mechanisms (chat, webhook, cron).
+The 5 Levels Research System provides daisetz with powerful autonomous research capabilities. By following this integration guide, you can enable comprehensive research on any topic, delivered through flexible trigger mechanisms (chat, webhook, cron).
 
 The system is designed to be:
 - **Comprehensive:** Progressive depth from basics to cutting-edge

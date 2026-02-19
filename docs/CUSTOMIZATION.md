@@ -2,7 +2,7 @@
 
 ## Overview: Custom vs Default Files
 
-thepopebot uses a **custom/core separation** architecture:
+daisetz uses a **custom/core separation** architecture:
 
 - **`/custom/operating_system/`** - Your customizations (highest priority)
 - **`/operating_system/`** - Default examples (fallback)
