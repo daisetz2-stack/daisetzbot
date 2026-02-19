@@ -16,7 +16,7 @@ Your task is to merge upstream changes and create a PR with a summary of what ch
 ### 1. Add Upstream Remote (if not already added)
 
 ```bash
-git remote add upstream https://github.com/stephengpope/daisetz.git 2>/dev/null || echo "Upstream already exists"
+git remote add upstream https://github.com/stephengpope/thepopebot.git 2>/dev/null || echo "Upstream already exists"
 git fetch upstream
 ```
 
