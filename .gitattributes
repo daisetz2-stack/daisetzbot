@@ -1,0 +1,23 @@
+# Git merge strategies for thepopebot upstream updates
+
+# Custom directory - always use your version (ours) on conflicts
+custom/** merge=ours
+
+# Core infrastructure - prefer upstream version (theirs) on conflicts
+.github/** merge=theirs
+event_handler/** merge=theirs
+setup/** merge=theirs
+Dockerfile merge=theirs
+entrypoint.sh merge=theirs
+.pi/extensions/** merge=theirs
+
+# Documentation - try to merge both (union)
+docs/** merge=union
+README.md merge=union
+CLAUDE.md merge=union
+
+# Logs are always local (already in .gitignore but be explicit)
+logs/** merge=ours
+
+# Operating system defaults can be merged (examples for users)
+operating_system/** merge=theirs

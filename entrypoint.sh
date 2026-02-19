@@ -1,6 +1,19 @@
 #!/bin/bash
 set -e
 
+# Helper function: resolve config file path (custom → default fallback)
+resolve_config() {
+    local filename="$1"
+    local custom_path="/job/custom/operating_system/${filename}"
+    local default_path="/job/operating_system/${filename}"
+    
+    if [ -f "$custom_path" ]; then
+        echo "$custom_path"
+    else
+        echo "$default_path"
+    fi
+}
+
 # Extract job ID from branch name (job/uuid -> uuid), fallback to random UUID
 if [[ "$BRANCH" == job/* ]]; then
     JOB_ID="${BRANCH#job/}"
@@ -50,18 +63,31 @@ cd /job
 # Create temp directory for agent use (gitignored via tmp/)
 mkdir -p /job/tmp
 
-# Symlink pi-skills into .pi/skills/ so Pi discovers them
+# Symlink pi-skills (core skills from upstream)
 ln -sf /pi-skills/brave-search /job/.pi/skills/brave-search
+
+# Symlink custom skills (user's skills take precedence)
+if [ -d "/job/custom/skills" ]; then
+    for skill_dir in /job/custom/skills/*/; do
+        if [ -d "$skill_dir" ]; then
+            skill_name=$(basename "$skill_dir")
+            ln -sf "$skill_dir" "/job/.pi/skills/${skill_name}"
+            echo "Loaded custom skill: ${skill_name}"
+        fi
+    done
+fi
 
 # Setup logs
 LOG_DIR="/job/logs/${JOB_ID}"
 mkdir -p "${LOG_DIR}"
 
-# 1. Build system prompt from operating_system MD files
+# 1. Build system prompt from operating_system MD files (custom → default)
 SYSTEM_FILES=("SOUL.md" "AGENT.md")
 > /job/.pi/SYSTEM.md
 for i in "${!SYSTEM_FILES[@]}"; do
-    cat "/job/operating_system/${SYSTEM_FILES[$i]}" >> /job/.pi/SYSTEM.md
+    FILE_PATH=$(resolve_config "${SYSTEM_FILES[$i]}")
+    echo "Loading ${SYSTEM_FILES[$i]} from: ${FILE_PATH}"
+    cat "$FILE_PATH" >> /job/.pi/SYSTEM.md
     if [ "$i" -lt $((${#SYSTEM_FILES[@]} - 1)) ]; then
         echo -e "\n\n" >> /job/.pi/SYSTEM.md
     fi

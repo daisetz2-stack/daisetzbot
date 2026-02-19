@@ -1,7 +1,23 @@
 const path = require('path');
+const fs = require('fs');
 const { render_md } = require('../utils/render-md');
 
 const DEFAULT_MODEL = 'claude-sonnet-4-20250514';
+
+/**
+ * Resolve config file path (custom → default fallback)
+ * @param {string} filename - Config filename
+ * @returns {string} Resolved path
+ */
+function resolveConfig(filename) {
+  const customPath = path.join(__dirname, '..', '..', 'custom', 'operating_system', filename);
+  const defaultPath = path.join(__dirname, '..', '..', 'operating_system', filename);
+  
+  if (fs.existsSync(customPath)) {
+    return customPath;
+  }
+  return defaultPath;
+}
 
 // Web search tool definition (Anthropic built-in)
 const WEB_SEARCH_TOOL = {
@@ -30,7 +46,8 @@ function getApiKey() {
 async function callClaude(messages, tools) {
   const apiKey = getApiKey();
   const model = process.env.EVENT_HANDLER_MODEL || DEFAULT_MODEL;
-  const systemPrompt = render_md(path.join(__dirname, '..', '..', 'operating_system', 'CHATBOT.md'));
+  const chatbotPath = resolveConfig('CHATBOT.md');
+  const systemPrompt = render_md(chatbotPath);
 
   // Combine user tools with web search
   const allTools = [WEB_SEARCH_TOOL, ...tools];

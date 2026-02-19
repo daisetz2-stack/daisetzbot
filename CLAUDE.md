@@ -101,6 +101,45 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 └── SECURITY.md                 # Security documentation
 ```
 
+## Custom vs Core Architecture
+
+thepopebot uses a **custom/core separation** pattern for clean upstream updates:
+
+```
+/
+├── custom/                      # User customizations (protected)
+│   ├── operating_system/       # Custom configs (highest priority)
+│   │   ├── SOUL.md             # Custom personality
+│   │   ├── CRONS.json          # Custom cron jobs
+│   │   └── ...
+│   └── skills/                 # Custom skills
+│
+├── operating_system/            # Default configs (updated from upstream)
+│   ├── SOUL.md                 # Default personality (fallback)
+│   ├── CRONS.json              # Example crons
+│   └── ...
+│
+└── .pi/skills/                 # Core/example skills (updated from upstream)
+```
+
+### How It Works
+
+**File Resolution**: All loaders check `custom/` first, then fall back to defaults:
+
+1. **entrypoint.sh** - Loads SOUL.md, AGENT.md from custom → operating_system
+2. **event_handler/cron.js** - Loads CRONS.json from custom → operating_system
+3. **event_handler/triggers.js** - Loads TRIGGERS.json from custom → operating_system
+4. **event_handler/claude/** - Loads CHATBOT.md from custom → operating_system
+
+**Merge Strategy**: `.gitattributes` defines automatic conflict resolution:
+- `custom/** merge=ours` - Your customizations always win
+- `event_handler/** merge=theirs` - Upstream core code wins
+- `docs/** merge=union` - Documentation merges both versions
+
+**Result**: Run `git merge upstream/main` to get updates without losing customizations!
+
+See [docs/UPSTREAM_UPDATES.md](/docs/UPSTREAM_UPDATES.md) for detailed workflow.
+
 ## Key Files
 
 | File | Purpose |

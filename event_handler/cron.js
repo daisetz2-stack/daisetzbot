@@ -7,15 +7,23 @@ const { executeAction } = require('./actions');
 const CRON_DIR = path.join(__dirname, 'cron');
 
 /**
- * Load and schedule crons from CRONS.json
+ * Load and schedule crons from CRONS.json (custom → default fallback)
  * @returns {Array} - Array of scheduled cron tasks
  */
 function loadCrons() {
-  const cronFile = path.join(__dirname, '..', 'operating_system', 'CRONS.json');
-
-  console.log('\n--- Cron Jobs ---');
-
-  if (!fs.existsSync(cronFile)) {
+  // Check custom location first, fall back to default
+  const customCronFile = path.join(__dirname, '..', 'custom', 'operating_system', 'CRONS.json');
+  const defaultCronFile = path.join(__dirname, '..', 'operating_system', 'CRONS.json');
+  
+  let cronFile;
+  if (fs.existsSync(customCronFile)) {
+    cronFile = customCronFile;
+    console.log('\n--- Cron Jobs (custom) ---');
+  } else if (fs.existsSync(defaultCronFile)) {
+    cronFile = defaultCronFile;
+    console.log('\n--- Cron Jobs (default) ---');
+  } else {
+    console.log('\n--- Cron Jobs ---');
     console.log('No CRONS.json found');
     console.log('-----------------\n');
     return [];
