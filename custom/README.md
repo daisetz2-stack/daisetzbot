@@ -1,6 +1,6 @@
 # Custom Configuration Directory
 
-This directory contains your customizations for thepopebot. Files here take precedence over defaults in `/operating_system/` and `.pi/skills/`.
+This directory contains your customizations for daisetz. Files here take precedence over defaults in `/operating_system/` and `.pi/skills/`.
 
 ## Why Use `/custom/`?
 
@@ -31,7 +31,7 @@ custom/
 
 ## How It Works
 
-When thepopebot starts, it checks for files in this order:
+When daisetz starts, it checks for files in this order:
 
 1. **custom/operating_system/SOUL.md** ← Loaded first
 2. If not found → **operating_system/SOUL.md** ← Fallback
@@ -95,7 +95,7 @@ EOF
 # Restart to load new configuration
 pm2 restart event-handler
 # or
-systemctl restart thepopebot-event-handler
+systemctl restart daisetz-event-handler
 ```
 
 ### 4. Verify Custom Files Are Loaded
@@ -192,7 +192,7 @@ This means when you run `git merge upstream/main`:
 
 ## Migration from Old Structure
 
-If you have an existing thepopebot with customizations in `/operating_system/`:
+If you have an existing daisetz with customizations in `/operating_system/`:
 
 ```bash
 # Use the migration tool
@@ -359,7 +359,7 @@ ls -la custom/skills/*/SKILL.md
 ```bash
 pm2 restart event-handler
 # or
-systemctl restart thepopebot-event-handler
+systemctl restart daisetz-event-handler
 ```
 
 **Check logs:**
@@ -388,7 +388,7 @@ Symlink to shared storage:
 
 ```bash
 # Link to network storage
-ln -s /mnt/shared/thepopebot-config custom/operating_system
+ln -s /mnt/shared/daisetz-config custom/operating_system
 ```
 
 ### Per-Instance Customization
@@ -431,4 +431,4 @@ pm2 restart event-handler
 pm2 logs event-handler | grep "custom"
 ```
 
-Now you're ready to customize thepopebot without losing changes during upstream updates! 🎨
+Now you're ready to customize daisetz without losing changes during upstream updates! 🎨

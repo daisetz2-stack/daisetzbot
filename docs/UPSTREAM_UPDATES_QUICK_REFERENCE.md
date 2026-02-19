@@ -1,6 +1,6 @@
 # Upstream Updates - Quick Reference Card
 
-One-page reference for managing upstream updates in thepopebot.
+One-page reference for managing upstream updates in daisetz.
 
 ## 🔄 Automatic Updates (Recommended)
 
@@ -235,7 +235,7 @@ curl http://localhost:3000/health
 cat event_handler/cron/.upstream-state.json
 
 # 5. Can reach GitHub?
-curl -s https://api.github.com/repos/stephengpope/thepopebot/commits/main | head -5
+curl -s https://api.github.com/repos/stephengpope/daisetz/commits/main | head -5
 ```
 
 ## 💡 Pro Tips

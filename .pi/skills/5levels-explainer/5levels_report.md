@@ -1,7 +1,7 @@
 # 5 Levels Report: Knowledge Graph
 
 **Research Date:** 2026-02-18  
-**Agent:** thepopebot  
+**Agent:** daisetz  
 **Report Version:** 1.0
 
 ---

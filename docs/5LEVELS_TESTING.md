@@ -339,7 +339,7 @@ Test in:
 npm run build
 
 # Test deployed version
-# Check: https://username.github.io/thepopebot/
+# Check: https://username.github.io/daisetz/
 ```
 
 ### Netlify

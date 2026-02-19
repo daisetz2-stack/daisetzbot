@@ -103,7 +103,7 @@ In `website/vite.config.js`:
 
 ```javascript
 export default defineConfig({
-  base: '/thepopebot/', // Change to your repo name
+  base: '/daisetz/', // Change to your repo name
   plugins: [react()],
   // ... rest of config
 });
@@ -118,7 +118,7 @@ git push origin main
 ```
 
 5. **Access your site**:
-   - Public: `https://username.github.io/thepopebot/`
+   - Public: `https://username.github.io/daisetz/`
    - Custom domain: Configure in Settings → Pages
 
 ---
@@ -303,7 +303,7 @@ cd dist
 git init
 git add -A
 git commit -m "Deploy"
-git push -f git@github.com:username/thepopebot.git main:gh-pages
+git push -f git@github.com:username/daisetz.git main:gh-pages
 
 # For Netlify CLI
 netlify deploy --prod --dir=dist

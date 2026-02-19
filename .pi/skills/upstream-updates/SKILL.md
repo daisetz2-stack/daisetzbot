@@ -1,6 +1,6 @@
 # Upstream Updates Management Skill
 
-This skill provides commands and tools for managing automatic upstream updates for thepopebot.
+This skill provides commands and tools for managing automatic upstream updates for daisetz.
 
 ## When to Use This Skill
 
@@ -49,7 +49,7 @@ Get a summary of commits between current state and upstream:
 ```bash
 # First, ensure upstream remote exists
 cd /job
-git remote add upstream https://github.com/stephengpope/thepopebot.git 2>/dev/null || true
+git remote add upstream https://github.com/stephengpope/daisetz.git 2>/dev/null || true
 git fetch upstream main
 
 # Get current commit from state file
@@ -188,7 +188,7 @@ See what would be updated without triggering a job:
 
 ```bash
 cd /job
-git remote add upstream https://github.com/stephengpope/thepopebot.git 2>/dev/null || true
+git remote add upstream https://github.com/stephengpope/daisetz.git 2>/dev/null || true
 git fetch upstream main
 
 # Get last synced commit
@@ -220,7 +220,7 @@ cd event_handler/cron
 # For now, check manually:
 
 UPSTREAM_OWNER="${UPSTREAM_OWNER:-stephengpope}"
-UPSTREAM_REPO="${UPSTREAM_REPO:-thepopebot}"
+UPSTREAM_REPO="${UPSTREAM_REPO:-daisetz}"
 API_URL="https://api.github.com/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/commits/main"
 
 LATEST_SHA=$(curl -s "$API_URL" | grep -o '"sha":"[^"]*"' | head -1 | cut -d'"' -f4)
@@ -243,7 +243,7 @@ fi
 These can be set in the Event Handler environment:
 
 - **`UPSTREAM_OWNER`** - GitHub owner of upstream repo (default: `stephengpope`)
-- **`UPSTREAM_REPO`** - Repository name (default: `thepopebot`)
+- **`UPSTREAM_REPO`** - Repository name (default: `daisetz`)
 - **`UPSTREAM_BRANCH`** - Branch to track (default: `main`)
 - **`DISABLE_UPSTREAM_CHECKS`** - Set to `true` to disable automatic checks
 

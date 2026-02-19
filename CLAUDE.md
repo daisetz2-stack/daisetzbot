@@ -1,16 +1,16 @@
-# thepopebot - AI Agent Template
+# daisetz - AI Agent Template
 
-This document explains the thepopebot codebase for AI assistants working on this project.
+This document explains the daisetz codebase for AI assistants working on this project.
 
-## What is thepopebot?
+## What is daisetz?
 
-thepopebot is a **template repository** for creating custom autonomous AI agents. It features a two-layer architecture: an Event Handler for orchestration (webhooks, Telegram chat, cron scheduling) and a Docker Agent for autonomous task execution via the Pi coding agent.
+daisetz is a **template repository** for creating custom autonomous AI agents. It features a two-layer architecture: an Event Handler for orchestration (webhooks, Telegram chat, cron scheduling) and a Docker Agent for autonomous task execution via the Pi coding agent.
 
 ## Two-Layer Architecture
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
-│                          thepopebot Architecture                          │
+│                           daisetz Architecture                            │
 ├──────────────────────────────────────────────────────────────────────────┤
 │                                                                          │
 │   ┌──────────────────┐                                                   │
@@ -103,7 +103,7 @@ thepopebot is a **template repository** for creating custom autonomous AI agents
 
 ## Custom vs Core Architecture
 
-thepopebot uses a **custom/core separation** pattern for clean upstream updates:
+daisetz uses a **custom/core separation** pattern for clean upstream updates:
 
 ```
 /
@@ -142,7 +142,7 @@ See [docs/UPSTREAM_UPDATES.md](/docs/UPSTREAM_UPDATES.md) for detailed workflow.
 
 ## Automatic Upstream Updates
 
-thepopebot includes an **automatic update system** that monitors the upstream repository and merges changes automatically:
+daisetz includes an **automatic update system** that monitors the upstream repository and merges changes automatically:
 
 ### How It Works
 
@@ -430,7 +430,7 @@ The Dockerfile creates a container with:
 6. Clone repository branch to `/job`
 7. Run Pi with SOUL.md + job.md as prompt
 8. Save session log to `logs/{JOB_ID}/`
-9. Commit all changes with message `thepopebot: job {JOB_ID}`
+9. Commit all changes with message `daisetz: job {JOB_ID}`
 10. Create PR via `gh pr create` (auto-merge handled by `auto-merge.yml` workflow)
 
 ### Environment Variables (Docker Agent)

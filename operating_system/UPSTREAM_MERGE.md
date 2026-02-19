@@ -1,10 +1,10 @@
 # Upstream Merge Task
 
-You are performing an **automatic upstream update** for thepopebot. Your goal is to safely merge the latest changes from the upstream repository while preserving all custom configurations.
+You are performing an **automatic upstream update** for daisetz. Your goal is to safely merge the latest changes from the upstream repository while preserving all custom configurations.
 
 ## Overview
 
-The thepopebot repository uses a custom/core separation architecture:
+The daisetz repository uses a custom/core separation architecture:
 - **Core files** (root directories) - Updated from upstream
 - **Custom files** (`/custom/`) - Protected customizations
 - **Automatic fallback** - System checks `/custom/` first, then defaults
@@ -16,7 +16,7 @@ Your task is to merge upstream changes and create a PR with a summary of what ch
 ### 1. Add Upstream Remote (if not already added)
 
 ```bash
-git remote add upstream https://github.com/stephengpope/thepopebot.git 2>/dev/null || echo "Upstream already exists"
+git remote add upstream https://github.com/stephengpope/daisetz.git 2>/dev/null || echo "Upstream already exists"
 git fetch upstream
 ```
 

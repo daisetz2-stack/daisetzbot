@@ -1,10 +1,10 @@
 # Automatic Upstream Update System
 
-This document explains thepopebot's automatic upstream update detection and merging system.
+This document explains daisetz's automatic upstream update detection and merging system.
 
 ## Overview
 
-The automatic update system provides **hands-off synchronization** with the upstream thepopebot repository. Instead of manually checking for updates, the system:
+The automatic update system provides **hands-off synchronization** with the upstream daisetz repository. Instead of manually checking for updates, the system:
 
 1. **Monitors** upstream repository daily
 2. **Detects** new commits automatically
@@ -26,7 +26,7 @@ This keeps your bot up-to-date with new features, bug fixes, and security patche
 │     └─> event_handler/cron/check-upstream-updates.sh           │
 │                                                                  │
 │  2. Check GitHub API                                            │
-│     └─> GET api.github.com/repos/stephengpope/thepopebot/...   │
+│     └─> GET api.github.com/repos/stephengpope/daisetz/...   │
 │                                                                  │
 │  3. Compare Commits                                             │
 │     ├─> Read: event_handler/cron/.upstream-state.json          │
@@ -84,7 +84,7 @@ This keeps your bot up-to-date with new features, bug fixes, and security patche
 
 **Environment Variables:**
 - `UPSTREAM_OWNER` - GitHub owner (default: `stephengpope`)
-- `UPSTREAM_REPO` - Repository name (default: `thepopebot`)
+- `UPSTREAM_REPO` - Repository name (default: `daisetz`)
 - `UPSTREAM_BRANCH` - Branch to track (default: `main`)
 - `API_KEY` - Required to create agent jobs
 - `PORT` - Event handler port (default: `3000`)
@@ -217,7 +217,7 @@ To track a different upstream (e.g., your own fork):
 Set environment variables in Event Handler:
 ```bash
 UPSTREAM_OWNER=myusername
-UPSTREAM_REPO=my-thepopebot-fork
+UPSTREAM_REPO=my-daisetz-fork
 UPSTREAM_BRANCH=main
 ```
 
@@ -385,7 +385,7 @@ Check Event Handler logs for errors:
 pm2 logs event-handler --lines 100
 
 # If using systemd
-journalctl -u thepopebot-event-handler -n 100
+journalctl -u daisetz-event-handler -n 100
 
 # If running in foreground
 # Errors appear in terminal output
@@ -644,7 +644,7 @@ Keep notes in `custom/README.md`:
 
 ### 7. Use Semantic Versioning
 
-If you fork thepopebot, use tags to track versions:
+If you fork daisetz, use tags to track versions:
 ```bash
 git tag -a v1.0.0 -m "Stable version with my customizations"
 git push origin v1.0.0
@@ -708,7 +708,7 @@ Add a trigger to notify external systems:
       "type": "http",
       "url": "https://your-service.com/upstream-updated",
       "method": "POST",
-      "vars": { "source": "thepopebot-updates" }
+      "vars": { "source": "daisetz-updates" }
     }
   ],
   "enabled": true
