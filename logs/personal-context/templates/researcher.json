@@ -1,0 +1,84 @@
+{
+  "name": "Dr. Jordan Kim",
+  "pronouns": "she/her",
+  "timezone": "Europe/London",
+  "language": "en",
+  
+  "preferences": {
+    "communication_style": "friendly",
+    "detail_level": "detailed",
+    "code_style": "Prefer Python, Jupyter notebooks, reproducible research",
+    "notification_hours": "9am-7pm GMT"
+  },
+  
+  "background": {
+    "role": "Research Scientist",
+    "expertise": [
+      "Natural Language Processing",
+      "Machine Learning",
+      "Data Analysis",
+      "Python/R",
+      "Academic writing"
+    ],
+    "interests": [
+      "AI ethics",
+      "Computational linguistics",
+      "Science communication",
+      "Hiking"
+    ],
+    "learning": [
+      "Large Language Model fine-tuning",
+      "Causal inference",
+      "Bayesian statistics"
+    ]
+  },
+  
+  "projects": [
+    {
+      "name": "sentiment-analysis-research",
+      "description": "Cross-lingual sentiment analysis study",
+      "status": "active",
+      "priority": 1
+    },
+    {
+      "name": "research-automation",
+      "description": "Tools for automating literature reviews",
+      "status": "planning",
+      "priority": 2
+    },
+    {
+      "name": "public-datasets",
+      "description": "Curated NLP datasets for research community",
+      "status": "maintenance",
+      "priority": 3
+    }
+  ],
+  
+  "context": {
+    "work_environment": "University lab, hybrid remote/office",
+    "goals": [
+      "Publish 2 papers this year",
+      "Build reproducible research pipeline",
+      "Improve code documentation",
+      "Present at ACL conference"
+    ],
+    "constraints": [
+      "Limited compute budget",
+      "Need ethical approval for data collection",
+      "Must use institutional approved tools for sensitive data"
+    ]
+  },
+  
+  "notes": [
+    {
+      "date": "2026-02-15",
+      "category": "research",
+      "content": "Need to automate literature review process - too time consuming"
+    },
+    {
+      "date": "2026-02-18",
+      "category": "preferences",
+      "content": "Prefer citations in APA format, include DOI when available"
+    }
+  ]
+}
