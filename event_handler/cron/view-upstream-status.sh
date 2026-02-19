@@ -29,12 +29,13 @@ echo "  Upstream Update Status"
 echo "================================================"
 echo ""
 
-# Read state file
+# Read state file using Node.js
 if [ -f "$STATE_FILE" ]; then
-  LAST_COMMIT=$(grep -o '"last_commit":"[^"]*"' "$STATE_FILE" | cut -d'"' -f4)
-  LAST_CHECK=$(grep -o '"last_check":"[^"]*"' "$STATE_FILE" | cut -d'"' -f4)
-  UPDATE_COUNT=$(grep -o '"update_count":[0-9]*' "$STATE_FILE" | cut -d':' -f2)
-  LAST_UPDATE_FOUND=$(grep -o '"last_update_found":"[^"]*"' "$STATE_FILE" | cut -d'"' -f4)
+  STATE_DATA=$(node -e "console.log(JSON.stringify(JSON.parse(require('fs').readFileSync('$STATE_FILE', 'utf8'))))")
+  LAST_COMMIT=$(echo "$STATE_DATA" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).last_commit")
+  LAST_CHECK=$(echo "$STATE_DATA" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).last_check")
+  UPDATE_COUNT=$(echo "$STATE_DATA" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).update_count || 0")
+  LAST_UPDATE_FOUND=$(echo "$STATE_DATA" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).last_update_found || ''")
   
   echo "Current State:"
   echo "  Last synced commit: ${LAST_COMMIT:0:7}"
@@ -61,12 +62,23 @@ info "Fetching latest upstream commit..."
 API_URL="https://api.github.com/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/commits/${UPSTREAM_BRANCH}"
 RESPONSE=$(curl -s "$API_URL")
 
-if echo "$RESPONSE" | grep -q '"sha"'; then
-  LATEST_SHA=$(echo "$RESPONSE" | grep -o '"sha":"[^"]*"' | head -1 | cut -d'"' -f4)
-  LATEST_DATE=$(echo "$RESPONSE" | grep -o '"date":"[^"]*"' | head -1 | cut -d'"' -f4)
-  COMMIT_MSG=$(echo "$RESPONSE" | grep -o '"message":"[^"]*"' | head -1 | cut -d'"' -f4 | sed 's/\\n/ /g')
-  AUTHOR=$(echo "$RESPONSE" | grep -o '"name":"[^"]*"' | head -2 | tail -1 | cut -d'"' -f4)
-  
+# Parse with Node.js
+PARSED=$(echo "$RESPONSE" | node -e "
+const data = JSON.parse(require('fs').readFileSync(0, 'utf8'));
+console.log(JSON.stringify({
+  sha: data.sha,
+  date: data.commit.author.date,
+  message: data.commit.message.replace(/\n/g, ' '),
+  author: data.commit.author.name
+}));
+")
+
+LATEST_SHA=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).sha")
+LATEST_DATE=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).date")
+COMMIT_MSG=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).message")
+AUTHOR=$(echo "$PARSED" | node -pe "JSON.parse(require('fs').readFileSync(0, 'utf8')).author")
+
+if [ -n "$LATEST_SHA" ]; then
   echo "Latest Upstream Commit:"
   echo "  SHA: ${LATEST_SHA:0:7}"
   echo "  Date: $LATEST_DATE"
@@ -96,8 +108,12 @@ else
   COMPARE_URL="https://api.github.com/repos/${UPSTREAM_OWNER}/${UPSTREAM_REPO}/compare/${LAST_COMMIT}...${LATEST_SHA}"
   COMPARE_RESPONSE=$(curl -s "$COMPARE_URL")
   
-  if echo "$COMPARE_RESPONSE" | grep -q '"total_commits"'; then
-    COMMIT_COUNT=$(echo "$COMPARE_RESPONSE" | grep -o '"total_commits":[0-9]*' | cut -d':' -f2)
+  COMMIT_COUNT=$(echo "$COMPARE_RESPONSE" | node -pe "
+    const data = JSON.parse(require('fs').readFileSync(0, 'utf8'));
+    data.total_commits || 'unknown';
+  " 2>/dev/null)
+  
+  if [ -n "$COMMIT_COUNT" ] && [ "$COMMIT_COUNT" != "undefined" ] && [ "$COMMIT_COUNT" != "unknown" ]; then
     echo "  New commits: $COMMIT_COUNT"
   fi
   
@@ -129,7 +145,7 @@ echo "Check for updates now:"
 echo "  cd event_handler/cron && bash check-upstream-updates.sh"
 echo ""
 echo "View detailed state:"
-echo "  cat event_handler/cron/.upstream-state.json | python3 -m json.tool"
+echo "  cat event_handler/cron/.upstream-state.json"
 echo ""
 echo "Reset state (force next check to trigger):"
 echo "  echo '{\"last_commit\":\"\",\"last_check\":\"\",\"update_count\":0}' > event_handler/cron/.upstream-state.json"
