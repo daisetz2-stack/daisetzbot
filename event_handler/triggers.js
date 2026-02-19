@@ -40,20 +40,29 @@ async function executeActions(trigger, context) {
 }
 
 /**
- * Load triggers from TRIGGERS.json and return Express middleware
+ * Load triggers from TRIGGERS.json (custom → default fallback) and return Express middleware
  * @returns {Function} Express middleware
  */
 function loadTriggers() {
-  const triggerFile = path.join(__dirname, '..', 'operating_system', 'TRIGGERS.json');
-  const triggerMap = new Map();
-
-  console.log('\n--- Triggers ---');
-
-  if (!fs.existsSync(triggerFile)) {
+  // Check custom location first, fall back to default
+  const customTriggerFile = path.join(__dirname, '..', 'custom', 'operating_system', 'TRIGGERS.json');
+  const defaultTriggerFile = path.join(__dirname, '..', 'operating_system', 'TRIGGERS.json');
+  
+  let triggerFile;
+  if (fs.existsSync(customTriggerFile)) {
+    triggerFile = customTriggerFile;
+    console.log('\n--- Triggers (custom) ---');
+  } else if (fs.existsSync(defaultTriggerFile)) {
+    triggerFile = defaultTriggerFile;
+    console.log('\n--- Triggers (default) ---');
+  } else {
+    console.log('\n--- Triggers ---');
     console.log('No TRIGGERS.json found');
     console.log('----------------\n');
     return (req, res, next) => next();
   }
+  
+  const triggerMap = new Map();
 
   const triggers = JSON.parse(fs.readFileSync(triggerFile, 'utf8'));
 

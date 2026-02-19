@@ -1,8 +1,22 @@
 # Customization
 
+## Overview: Custom vs Default Files
+
+thepopebot uses a **custom/core separation** architecture:
+
+- **`/custom/operating_system/`** - Your customizations (highest priority)
+- **`/operating_system/`** - Default examples (fallback)
+- **Automatic resolution** - System checks custom → default
+
+This means you can safely pull upstream updates without conflicts!
+
 ## The Operating System
 
-The `operating_system/` directory is the agent's brain — it defines who the agent is and how it behaves.
+The `operating_system/` directory defines the agent's behavior. To customize any file:
+
+1. Copy it to `/custom/operating_system/`
+2. Edit your copy
+3. Your version will be used automatically
 
 | File | Purpose |
 |------|---------|
@@ -12,6 +26,13 @@ The `operating_system/` directory is the agent's brain — it defines who the ag
 | `HEARTBEAT.md` | Self-monitoring behavior |
 | `CRONS.json` | Scheduled job definitions |
 | `TRIGGERS.json` | Webhook trigger definitions |
+
+**Example:**
+```bash
+# Customize the bot's personality
+cp operating_system/SOUL.md custom/operating_system/SOUL.md
+# Edit custom/operating_system/SOUL.md
+```
 
 Each job automatically gets its own `logs/<JOB_ID>/job.md` file created by the event handler. Jobs are created via Telegram chat, webhooks, or cron schedules.
 
@@ -71,7 +92,28 @@ Set `"enabled": true` to activate a scheduled job.
 
 ## Skills
 
-Add custom skills for the agent in `.pi/skills/`. Skills extend the agent's capabilities with specialized tools and behaviors.
+Skills extend the agent's capabilities with specialized tools and behaviors.
+
+**Location:**
+- **Core skills** - `.pi/skills/` (examples from upstream, updated automatically)
+- **Custom skills** - `custom/skills/` (your skills, protected from updates)
+
+**Adding a custom skill:**
+
+1. Create directory: `custom/skills/my-skill/`
+2. Add `SKILL.md` with instructions
+3. Add any code/tools your skill needs
+4. Restart to load the skill
+
+Custom skills with the same name as core skills take precedence.
+
+**Example structure:**
+```
+custom/skills/my-skill/
+├── SKILL.md           # Skill instructions
+├── package.json       # If skill needs dependencies
+└── my-tool.js         # Skill implementation
+```
 
 ---
 
