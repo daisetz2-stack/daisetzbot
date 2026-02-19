@@ -1,0 +1,88 @@
+{
+  "name": "Yuki Tanaka / 田中優希",
+  "pronouns": "she/her",
+  "timezone": "Asia/Tokyo",
+  "language": "ja",
+  
+  "preferences": {
+    "communication_style": "friendly",
+    "detail_level": "balanced",
+    "code_style": "Prefer clean, well-documented code with bilingual comments",
+    "notification_hours": "10am-8pm JST",
+    "response_format": "Can respond in English or Japanese, prefer Japanese for casual conversation"
+  },
+  
+  "background": {
+    "role": "Full Stack Developer & Technical Writer",
+    "expertise": [
+      "JavaScript/TypeScript",
+      "Python",
+      "React/Next.js",
+      "Technical translation (EN↔JP)",
+      "Documentation",
+      "UX writing"
+    ],
+    "interests": [
+      "Web accessibility",
+      "Internationalization (i18n)",
+      "Developer experience",
+      "Language learning tech",
+      "Cooking",
+      "Photography"
+    ],
+    "learning": [
+      "Advanced React patterns",
+      "Web performance optimization",
+      "Technical writing in English"
+    ]
+  },
+  
+  "projects": [
+    {
+      "name": "daisetz",
+      "description": "バイリンガルAIアシスタント / Bilingual AI assistant",
+      "status": "active",
+      "priority": 1
+    },
+    {
+      "name": "i18n-toolkit",
+      "description": "Tools for managing multilingual content",
+      "status": "active",
+      "priority": 2
+    },
+    {
+      "name": "tech-blog",
+      "description": "Bilingual technical blog (EN/JP)",
+      "status": "maintenance",
+      "priority": 3
+    }
+  ],
+  
+  "context": {
+    "work_environment": "Tokyo-based, working with global teams, hybrid office/remote",
+    "goals": [
+      "Improve English technical writing skills",
+      "Build better i18n tools for developers",
+      "Create more bilingual technical content",
+      "Contribute to open source accessibility projects"
+    ],
+    "constraints": [
+      "Work network has some restrictions",
+      "Need to support both English and Japanese users",
+      "Prefer tools that work well with CJK languages"
+    ]
+  },
+  
+  "notes": [
+    {
+      "date": "2026-02-15",
+      "category": "preferences",
+      "content": "When writing code comments, prefer English for implementation details, Japanese for business logic explanations"
+    },
+    {
+      "date": "2026-02-18",
+      "category": "language",
+      "content": "Can read English technical docs but prefer Japanese for UI/UX content"
+    }
+  ]
+}

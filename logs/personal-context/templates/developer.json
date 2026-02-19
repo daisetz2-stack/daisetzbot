@@ -1,0 +1,61 @@
+{
+  "name": "Alex Developer",
+  "pronouns": "they/them",
+  "timezone": "America/Los_Angeles",
+  "language": "en",
+  
+  "preferences": {
+    "communication_style": "technical",
+    "detail_level": "balanced",
+    "code_style": "Prefer TypeScript, functional programming, comprehensive tests",
+    "notification_hours": "9am-6pm"
+  },
+  
+  "background": {
+    "role": "Software Engineer",
+    "expertise": [
+      "JavaScript/TypeScript",
+      "Node.js",
+      "React",
+      "Docker",
+      "CI/CD"
+    ],
+    "interests": [
+      "Developer tooling",
+      "Automation",
+      "Open source"
+    ],
+    "learning": [
+      "Rust",
+      "Machine learning"
+    ]
+  },
+  
+  "projects": [
+    {
+      "name": "daisetz",
+      "description": "Personal AI assistant agent",
+      "status": "active",
+      "priority": 1
+    },
+    {
+      "name": "personal-website",
+      "description": "Portfolio and blog",
+      "status": "maintenance",
+      "priority": 3
+    }
+  ],
+  
+  "context": {
+    "work_environment": "Remote, flexible hours",
+    "goals": [
+      "Build automated development workflows",
+      "Contribute to open source projects",
+      "Learn systems programming"
+    ],
+    "constraints": [
+      "Prefer cost-effective solutions",
+      "Must work on macOS and Linux"
+    ]
+  }
+}
