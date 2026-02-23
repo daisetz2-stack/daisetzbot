@@ -1,49 +1,51 @@
-# Daily Financial Report — February 19, 2026
+# Daily Financial Report — February 23, 2026
 
-> Generated at 05:00 AM UTC | Pre-market briefing based on February 18, 2026 close
+> Generated at 05:00 UTC | Pre-market briefing
 
 ---
 
 ## 📊 Major Indices
 
-| Index | Last Close | Change | % Change |
+| Index | Last Close (Feb 20) | Change | % Change |
 |-------|-----------|--------|----------|
-| S&P 500 | 6,881.31 | +38.09 | +0.56% |
-| Dow Jones | 49,662.66 | +129.47 | +0.26% |
-| Nasdaq Composite | 22,753.63 | +175.25 | +0.78% |
-| Russell 2000 | ~2,646 | — | +0.50% |
+| S&P 500 | 6,909.51 | +47.62 | +0.70% |
+| Dow Jones | 49,625.97 | +230.81 | +0.47% |
+| Nasdaq Composite | 22,886.07 | +203.34 | +0.90% |
+| Russell 2000 | — | — | — |
 
-**Pre-market Futures:**
-- Markets closed higher for third consecutive session
-- S&P 500 approaching psychological 7,000 level
-- Technology sector led gains, with AI concerns temporarily easing
-- Strong earnings season continues (75% of companies beating estimates)
+**Pre-market Futures (Monday, Feb 23):**
+- S&P 500 futures: +0.69% at 6,909.51
+- Dow futures: +0.47% at 49,625.97
+- Nasdaq futures: +0.90% at 22,886.07
+- Markets showing positive momentum heading into the week
+
+**Year-to-Date Performance:**
+- S&P 500: +0.9%
+- Dow Jones: +3.3%
+- Nasdaq: -1.5%
 
 ---
 
 ## 🌍 Global Markets
 
 ### Asia-Pacific
-- **Japan Nikkei 225**: +1.02% — Gained after PM Sanae Takaichi reappointed following Feb 8 landslide victory
-- **Most Asian markets**: CLOSED — Lunar New Year holidays (China, Hong Kong, South Korea, Taiwan)
-- **Australia S&P/ASX 200**: +0.2%
-- **India Sensex**: +0.2%
+- Data unavailable from current searches
+- China's People's Bank expected to announce lending rate decision this week
 
 ### Europe
-- **UK FTSE 100**: +1.2% — Boosted by UK inflation data supporting BOE rate cut expectations
-- **Germany DAX**: +0.9% — Approaching fresh record highs
-- **France CAC 40**: +0.6% — ECB President Lagarde reportedly considering early departure
+- Data unavailable from current searches
 
 ---
 
 ## 📈 Bonds & Rates
 
-- **10-Year Treasury Yield:** 4.087% (up 2-3 bps)
-- **2-Year Treasury Yield:** 3.468% (up 3 bps)
-- **2s/10s Spread:** ~62 bps (positive)
-- **Fed Funds Rate:** 3.50-3.75% (unchanged, held in January)
+- **10-Year Treasury Yield:** Data unavailable
+- **2-Year Treasury Yield:** Data unavailable
+- **2s/10s Spread:** Data unavailable
+- **Fed Funds Rate:** Target rate maintained (specific level not provided in search results)
+- **Core PCE Index:** 3.0% year-over-year (well above Fed's 2% target)
 
-**FOMC Minutes Released:** Fed officials divided on future rate path. Some favor holding rates steady for extended period, while others support resuming cuts if inflation trends lower. Market pricing shows 6% chance of March cut, with majority expecting potential cuts in June/September.
+*Note: Bond yields initially dropped following weak economic data, then rebounded after renewed tariff announcements. Bond vigilantism concerns emerging.*
 
 ---
 
@@ -51,78 +53,95 @@
 
 | Commodity | Price | Change |
 |-----------|-------|--------|
-| WTI Crude Oil | $64-65/barrel | +2.6% to +4.5% |
-| Gold | $4,995/oz | +1.8% |
-| Silver | $77.10/oz | +4.9% |
-| Natural Gas | Low $3/MMBtu | Slight decline |
+| WTI Crude Oil | — | Data unavailable |
+| Gold | $5,160.98/oz | +$53.52 (+1.05%) |
+| Silver | $82.34/oz (Comex) | +$4.38 (+5.62%) |
+| Natural Gas | — | Data unavailable |
 
-**Notable**: Oil surged on US-Iran nuclear talks uncertainty and Iran Revolutionary Guard closing Strait of Hormuz partially during drills (20% of global oil flows). Gold and silver rebounded from prior-day selloff but showing consolidation fatigue.
+**Precious Metals Outlook:**
+- Gold trading near $5,080-5,160 range with strong safe-haven demand
+- Analysts expect further gains driven by geopolitical tensions and trade uncertainties
+- Silver showing strength from increased post-Lunar New Year liquidity and industrial demand (solar, aluminum sectors)
 
 ---
 
 ## 💱 Currencies
 
-- **DXY (Dollar Index):** 97.70 (+0.6%)
-- **EUR/USD:** 1.1840 (slight decline)
-- **USD/JPY:** 153.75-154.81 (up ~1%)
-- **GBP/USD:** ~1.35 (pound under pressure)
-
-**Notable**: Dollar strengthened moderately. Yen weakened significantly (worst day this month) on rising US yields and Fed rate uncertainty. NZD lagged after RBNZ held rates at 2.25%.
+- **DXY (Dollar Index):** Initially weakened to 97.8, then rebounded following new tariff announcements
+- **EUR/USD:** Data unavailable
+- **USD/JPY:** Data unavailable
+- **GBP/USD:** Data unavailable
 
 ---
 
 ## 📰 Key Headlines
 
-1. **Fed Minutes Show Division**: Officials split on whether to hold rates or resume cuts; several want clear disinflation before easing
-2. **Meta-Nvidia Partnership**: Meta announces long-term deal for millions of Nvidia AI chips; NVDA +1.6%, META +0.6%
-3. **Geopolitical Tensions**: Iran closes Strait of Hormuz during drills amid nuclear talks; major US-Iran war "looks imminent" per reports
-4. **Q4 GDP Friday**: Expected 2.5% annual growth rate, down from Q3's 4.4% but still healthy; government shutdown impact noted
-5. **AI Rotation Continues**: Investors reassessing software valuations; "shoot first-ask questions later" mentality on disruption fears
+1. **Supreme Court Strikes Down Trump Tariffs (6-3 ruling)** — Court ruled executive branch lacks authority to unilaterally impose tariffs under IEEPA, providing relief to tech and retail sectors
+
+2. **Trump Announces 15% Global Tariff** — Despite Supreme Court ruling, administration vows to raise global tariff to 15% "effective immediately" via executive order, reviving trade uncertainty
+
+3. **Q4 GDP Misses Badly at 1.4%** — Fourth quarter GDP growth of 1.4% vs. 2.5% consensus, down sharply from Q3's 4.4%, attributed to government shutdown and spending decline
+
+4. **Nvidia Earnings Wednesday** — All eyes on AI bellwether's results this week; CEO Jensen Huang says Blackwell demand "off the charts"; stock holds 7.8% weighting in S&P 500
+
+5. **Middle East Tensions Escalate** — Significant US military deployment near Iran raising geopolitical risk premium; 15-day deadline for Iran-US talks approaching
 
 ---
 
 ## 🏭 Sector Watch
 
-- **Top Performing:** Technology (Nasdaq +0.78%), led by semiconductors and AI infrastructure
-- **Worst Performing:** Software stocks under rotation pressure; concerns over AI disruption to traditional tech
-- **Notable Movers:**
-  - **Winners**: Nvidia +1.6% (Meta deal), Cadence Design +7.6%, Analog Devices +2.6%, Medtronic +4.6%, Entergy +6%, Moderna +6.1% (FDA flu vaccine review), Global Payments +16%
-  - **Losers**: Palo Alto Networks -6.8% (weak guidance), Conagra Brands (lowered outlook), La-Z-Boy -7%, General Mills -7%
+- **Top Performing:** Technology sector led Friday's gains on Supreme Court tariff ruling; semiconductors and software showing strength
+  
+- **Worst Performing:** Consumer staples and traditional retail under pressure; mega-cap tech "Magnificent Seven" showing mixed year-to-date performance
+
+- **Notable Movers:** 
+  - **Gainers:** Amazon (AMZN) +2%, Alphabet (GOOGL) +4%, Nvidia (NVDA) +0.89%, Teradyne (TER) and Cognex (CGNX) surged on strong Q4 automation demand
+  - **Losers:** Walmart (WMT) -2% on HSBC downgrade, Akamai (AKAM) -9% on weak guidance, Microsoft (MSFT) -17% YTD despite decade-low valuation
 
 ---
 
-## 📅 Economic Calendar (Today)
+## 📅 Economic Calendar (This Week)
 
 | Time (ET) | Event | Consensus | Prior |
 |-----------|-------|-----------|-------|
-| All day | Lunar New Year | — | Asian markets closed |
-| TBD | Housing data follow-through | — | Dec starts +6.2% m/m |
-| TBD | Manufacturing momentum | — | Jan production +0.6% m/m |
+| TBD | US Producer Price Index (PPI) | TBD | — |
+| TBD | Housing Data Release | TBD | — |
+| TBD | Consumer Confidence Report | TBD | — |
+| TBD | Regional Fed Indicators | TBD | — |
+| TBD | People's Bank of China Prime Rate | TBD | — |
+| Wednesday PM | Nvidia Q4 Earnings | TBD | — |
+| Wednesday | Salesforce Earnings | TBD | — |
+| This Week | Berkshire Hathaway Earnings | TBD | — |
 
-**This Week Ahead:**
-- **Thursday**: Initial jobless claims (exp. 225k), Philly Fed survey, trade deficit data, pending home sales
-- **Friday**: Q4 GDP (exp. +2.5-3.0%), Dec PCE price index (Fed's preferred inflation gauge, exp. +2.9% y/y), personal income/spending, U of Michigan consumer sentiment
+*Note: Specific times not available in search results. Check financial calendars for exact timing.*
 
 ---
 
 ## 🔍 Analysis & Outlook
 
-**Market Sentiment**: Cautiously optimistic. Equities extended their winning streak as tech jitters eased and earnings remain strong (75% beat rate, +16.9% blended growth). However, Fed division on rate cuts and sticky inflation concerns keep volatility in play.
+**Market Sentiment:** Markets displaying resilience despite significant crosscurrents. Friday's session showcased a "risk-on" sentiment in tech following the Supreme Court's tariff reversal, though this optimism is tempered by weak GDP data and renewed tariff threats from the administration.
 
-**Key Themes**:
-- **AI Investment ROI**: Markets grappling with whether massive AI spending will translate to profits; rotation from software to other sectors ongoing
-- **Fed Policy Uncertainty**: Minutes showed no consensus on next moves; data-dependent approach means every economic release matters
-- **Geopolitical Risk Premium**: Oil markets reacting to Middle East tensions; potential for disruption if US-Iran situation escalates
-- **Earnings Quality**: Strong Q4 results (excluding tech giants, still +4.6% growth) suggest broad economic resilience despite consumer challenges
+**Key Themes:**
 
-**What to Watch**:
-1. Friday's PCE inflation data (Fed's key gauge)
-2. Q4 GDP revision potential from government shutdown data distortions
-3. Nvidia earnings Feb 25 (major market catalyst)
-4. US-Iran negotiations and Strait of Hormuz situation
-5. Whether S&P 500 can break through 7,000 psychological level
+1. **Tariff Whiplash:** The Supreme Court's rejection of tariffs initially boosted import-heavy sectors, but Trump's immediate announcement of new 15% global tariffs has reintroduced volatility and uncertainty. Markets appear to be pricing in ongoing policy turbulence.
 
-**Technical Notes**: S&P 500 holding above key moving averages, approaching all-time highs. Bond yields rising on strong economic data could pressure equity valuations if sustained. Dollar strength may weigh on commodities and international earnings.
+2. **Growth Concerns:** Q4 GDP's sharp miss (1.4% vs. 2.5% expected) signals economic headwinds. The slowdown from Q3's 4.4% growth is attributed to the government shutdown and reduced spending, raising stagflation concerns given the 3% core PCE reading.
+
+3. **AI Trade Under Scrutiny:** Nvidia's Wednesday earnings report will be crucial for market direction. With the stock holding 7.8% of the S&P 500's weighting and Magnificent Seven members showing mixed performance (MSFT -17%, AMZN -11% YTD), investors need confirmation that AI demand remains robust.
+
+4. **Fed in a Box:** Sticky inflation at 3% combined with slowing growth puts the Federal Reserve in a challenging position. Markets will parse PPI data and Fed speaker comments for rate cut timing signals.
+
+5. **Safe-Haven Flows:** Gold breaking above $5,000/oz and silver's 5.62% weekly gain reflect elevated geopolitical risk premium. Middle East tensions and trade policy uncertainty are driving defensive positioning.
+
+**What to Watch:**
+- Nvidia earnings Wednesday (after market close) — key bellwether for AI sustainability
+- PPI data for inflation trajectory clues
+- China lending rate decision for global growth signals
+- Geopolitical developments (Iran-US deadline, trade negotiations)
+- Bond market behavior (vigilantism concerns if yields continue spiking)
+- Software sector earnings (Salesforce) for cloud demand health
+
+**Market Positioning:** Pre-market futures suggest modest gains to start the week, but volatility is likely given the confluence of earnings, economic data, and policy uncertainty. Tech leadership continues but faces valuation pressure. Defensive sectors and precious metals attracting safe-haven flows.
 
 ---
 
