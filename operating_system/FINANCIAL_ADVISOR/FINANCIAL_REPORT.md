@@ -1,6 +1,6 @@
-# Daily Financial Report — February 19, 2026
+# Daily Financial Report — February 25, 2026
 
-> Generated at 05:00 AM UTC | Pre-market briefing based on February 18, 2026 close
+> Generated at 05:00 UTC | Pre-market briefing
 
 ---
 
@@ -8,42 +8,41 @@
 
 | Index | Last Close | Change | % Change |
 |-------|-----------|--------|----------|
-| S&P 500 | 6,881.31 | +38.09 | +0.56% |
-| Dow Jones | 49,662.66 | +129.47 | +0.26% |
-| Nasdaq Composite | 22,753.63 | +175.25 | +0.78% |
-| Russell 2000 | ~2,646 | — | +0.50% |
+| S&P 500 | 6,890.07 | +53.09 | +0.77% |
+| Dow Jones | 49,174.50 | +370.44 | +0.76% |
+| Nasdaq Composite | 22,863.68 | +235.10 | +1.04% |
+| Russell 2000 | — | — | +1.2%* |
 
 **Pre-market Futures:**
-- Markets closed higher for third consecutive session
-- S&P 500 approaching psychological 7,000 level
-- Technology sector led gains, with AI concerns temporarily easing
-- Strong earnings season continues (75% of companies beating estimates)
+- Markets opened higher in Asia following Tuesday's strong U.S. rally
+- Technology shares extending gains as AI disruption concerns ease
+- Futures indicate continued positive momentum heading into Wednesday session
+
+*Percentage change only available from market reports
 
 ---
 
 ## 🌍 Global Markets
 
 ### Asia-Pacific
-- **Japan Nikkei 225**: +1.02% — Gained after PM Sanae Takaichi reappointed following Feb 8 landslide victory
-- **Most Asian markets**: CLOSED — Lunar New Year holidays (China, Hong Kong, South Korea, Taiwan)
-- **Australia S&P/ASX 200**: +0.2%
-- **India Sensex**: +0.2%
+- Asian markets rallying in early trading, following Wall Street's tech-led rebound
+- Investor sentiment improving after weeks of AI-related volatility
+- Technology sector catching bid across the region
 
 ### Europe
-- **UK FTSE 100**: +1.2% — Boosted by UK inflation data supporting BOE rate cut expectations
-- **Germany DAX**: +0.9% — Approaching fresh record highs
-- **France CAC 40**: +0.6% — ECB President Lagarde reportedly considering early departure
+- European leaders marked Ukraine war anniversary with visits to Kyiv
+- No U.S. Cabinet-level officials attended anniversary events
+- European markets monitoring U.S. tariff developments closely
 
 ---
 
 ## 📈 Bonds & Rates
 
-- **10-Year Treasury Yield:** 4.087% (up 2-3 bps)
-- **2-Year Treasury Yield:** 3.468% (up 3 bps)
-- **2s/10s Spread:** ~62 bps (positive)
-- **Fed Funds Rate:** 3.50-3.75% (unchanged, held in January)
-
-**FOMC Minutes Released:** Fed officials divided on future rate path. Some favor holding rates steady for extended period, while others support resuming cuts if inflation trends lower. Market pricing shows 6% chance of March cut, with majority expecting potential cuts in June/September.
+- **10-Year Treasury Yield:** Data not available in current search results
+- **2-Year Treasury Yield:** Data not available in current search results
+- **2s/10s Spread:** Monitored for recession signals; specific data unavailable
+- **Fed Funds Rate:** 3.50%-3.75% (current target range)
+- **Fed Outlook:** No rate cut expected for March; policymakers taking "wait-and-see" approach amid strong economic data
 
 ---
 
@@ -51,43 +50,45 @@
 
 | Commodity | Price | Change |
 |-----------|-------|--------|
-| WTI Crude Oil | $64-65/barrel | +2.6% to +4.5% |
-| Gold | $4,995/oz | +1.8% |
-| Silver | $77.10/oz | +4.9% |
-| Natural Gas | Low $3/MMBtu | Slight decline |
+| WTI Crude Oil | — | Data unavailable |
+| Gold | $5,184.64/oz | +$41.79 (+0.81%) |
+| Silver | — | Data unavailable |
+| Natural Gas | — | Data unavailable |
 
-**Notable**: Oil surged on US-Iran nuclear talks uncertainty and Iran Revolutionary Guard closing Strait of Hormuz partially during drills (20% of global oil flows). Gold and silver rebounded from prior-day selloff but showing consolidation fatigue.
+**Gold Analysis:** Trading near all-time highs; 24-hour range $5,124.71-$5,193.98; strong YoY performance (+77.86%)
 
 ---
 
 ## 💱 Currencies
 
-- **DXY (Dollar Index):** 97.70 (+0.6%)
-- **EUR/USD:** 1.1840 (slight decline)
-- **USD/JPY:** 153.75-154.81 (up ~1%)
-- **GBP/USD:** ~1.35 (pound under pressure)
+- **DXY (Dollar Index):** Supported by higher-for-longer rate expectations
+- **EUR/USD:** Under pressure from dollar strength
+- **USD/JPY:** Identified as major push-point for DXY basket
+- **GBP/USD:** Following broader dollar trend
 
-**Notable**: Dollar strengthened moderately. Yen weakened significantly (worst day this month) on rising US yields and Fed rate uncertainty. NZD lagged after RBNZ held rates at 2.25%.
+*Specific exchange rates not available in current search results*
 
 ---
 
 ## 📰 Key Headlines
 
-1. **Fed Minutes Show Division**: Officials split on whether to hold rates or resume cuts; several want clear disinflation before easing
-2. **Meta-Nvidia Partnership**: Meta announces long-term deal for millions of Nvidia AI chips; NVDA +1.6%, META +0.6%
-3. **Geopolitical Tensions**: Iran closes Strait of Hormuz during drills amid nuclear talks; major US-Iran war "looks imminent" per reports
-4. **Q4 GDP Friday**: Expected 2.5% annual growth rate, down from Q3's 4.4% but still healthy; government shutdown impact noted
-5. **AI Rotation Continues**: Investors reassessing software valuations; "shoot first-ask questions later" mentality on disruption fears
+1. **"Turnaround Tuesday" Rally:** Major indices rebounded sharply after Monday's AI-disruption selloff; S&P 500 recovered 0.8%, Nasdaq led with 1.0% gain
+2. **AMD-Meta AI Deal:** Advanced Micro Devices surged 8% on multiyear agreement to supply AI chips to Meta, challenging Nvidia's dominance
+3. **Tariff Turmoil:** Supreme Court struck down IEEPA tariffs; Trump administration proposing 15% global tariff under Section 122 authority
+4. **Novo Nordisk Plunges:** Shares tumbled 16% after CagriSema obesity drug underperformed vs. Eli Lilly's Zepbound in head-to-head trial
+5. **Consumer Confidence Beats:** Conference Board index rose to 91.2 vs. 87.4 expected; Expectations Index surged 4.8 points
 
 ---
 
 ## 🏭 Sector Watch
 
-- **Top Performing:** Technology (Nasdaq +0.78%), led by semiconductors and AI infrastructure
-- **Worst Performing:** Software stocks under rotation pressure; concerns over AI disruption to traditional tech
-- **Notable Movers:**
-  - **Winners**: Nvidia +1.6% (Meta deal), Cadence Design +7.6%, Analog Devices +2.6%, Medtronic +4.6%, Entergy +6%, Moderna +6.1% (FDA flu vaccine review), Global Payments +16%
-  - **Losers**: Palo Alto Networks -6.8% (weak guidance), Conagra Brands (lowered outlook), La-Z-Boy -7%, General Mills -7%
+- **Top Performing:** Technology/Semiconductors (AI infrastructure ecosystem rallying; AMD +8%, Nvidia rising), Retail (Home Depot +3% on earnings beat)
+- **Worst Performing:** Pharmaceuticals (Novo Nordisk -16%), Legacy Tech under pressure (IBM concerns over Anthropic/COBOL threat, though analysts view as "near-term sentiment overhang")
+- **Notable Movers:** 
+  - Home Depot (HD): Beat Q4 estimates with EPS $2.72 on $38.2B revenue; +3%
+  - Eli Lilly (LLY): Gaining market share in GLP-1 space after rival's trial disappointment
+  - Meta (META): Rising on AMD chip supply agreement
+  - CAVA, MercadoLibre (MELI), HP Inc (HPQ), Realty Income (O): Reporting after bell
 
 ---
 
@@ -95,34 +96,36 @@
 
 | Time (ET) | Event | Consensus | Prior |
 |-----------|-------|-----------|-------|
-| All day | Lunar New Year | — | Asian markets closed |
-| TBD | Housing data follow-through | — | Dec starts +6.2% m/m |
-| TBD | Manufacturing momentum | — | Jan production +0.6% m/m |
+| TBD | Initial Jobless Claims | — | — |
+| After Close | Salesforce (CRM) Earnings | — | — |
+| After Close | Multiple Earnings Reports | — | See Notable Movers |
 
-**This Week Ahead:**
-- **Thursday**: Initial jobless claims (exp. 225k), Philly Fed survey, trade deficit data, pending home sales
-- **Friday**: Q4 GDP (exp. +2.5-3.0%), Dec PCE price index (Fed's preferred inflation gauge, exp. +2.9% y/y), personal income/spending, U of Michigan consumer sentiment
+**Key Events:**
+- Salesforce earnings (Wednesday after close) - critical for enterprise software sentiment
+- Nvidia earnings (Thursday) - most anticipated AI bellwether report of the quarter
+- Fed officials speeches scheduled throughout week
 
 ---
 
 ## 🔍 Analysis & Outlook
 
-**Market Sentiment**: Cautiously optimistic. Equities extended their winning streak as tech jitters eased and earnings remain strong (75% beat rate, +16.9% blended growth). However, Fed division on rate cuts and sticky inflation concerns keep volatility in play.
+**Market Sentiment:** Risk-on environment returned Tuesday as investors prioritized strong domestic consumption and corporate earnings over geopolitical headwinds. The 1.2% Russell 2000 gain signals broad-based participation beyond "Magnificent Seven" stocks.
 
-**Key Themes**:
-- **AI Investment ROI**: Markets grappling with whether massive AI spending will translate to profits; rotation from software to other sectors ongoing
-- **Fed Policy Uncertainty**: Minutes showed no consensus on next moves; data-dependent approach means every economic release matters
-- **Geopolitical Risk Premium**: Oil markets reacting to Middle East tensions; potential for disruption if US-Iran situation escalates
-- **Earnings Quality**: Strong Q4 results (excluding tech giants, still +4.6% growth) suggest broad economic resilience despite consumer challenges
+**Economic Backdrop:** The "soft landing" narrative remains intact but with complications. February Consumer Confidence beat (91.2 vs 87.4) and January manufacturing production surge (+0.6%, largest monthly gain in nearly a year) demonstrate economic resilience. However, this strength creates a "good news is bad news" paradox - robust data may keep Fed rates higher for longer, pressuring growth stocks.
 
-**What to Watch**:
-1. Friday's PCE inflation data (Fed's key gauge)
-2. Q4 GDP revision potential from government shutdown data distortions
-3. Nvidia earnings Feb 25 (major market catalyst)
-4. US-Iran negotiations and Strait of Hormuz situation
-5. Whether S&P 500 can break through 7,000 psychological level
+**Key Themes:**
+1. **AI Infrastructure Resilience:** AMD-Meta deal signals diversification beyond Nvidia, supporting entire AI ecosystem
+2. **Housing Sector Strength:** December starts surged 6.2% to 1.404M units, benefiting homebuilders (DR Horton, Lennar)
+3. **Trade Policy Uncertainty:** 15% global tariff proposal creates ongoing volatility risk despite current market resilience
+4. **Earnings Critical:** With Salesforce (Wed) and Nvidia (Thu) reporting, tech leadership faces crucial test
 
-**Technical Notes**: S&P 500 holding above key moving averages, approaching all-time highs. Bond yields rising on strong economic data could pressure equity valuations if sustained. Dollar strength may weigh on commodities and international earnings.
+**What to Watch:**
+- Nvidia earnings Thursday will set tone for AI investment thesis
+- Fed officials' commentary on rate path given strong economic data
+- Congressional response to State of the Union economic messaging
+- Auto-merge and tariff policy implementation details
+
+**Risks:** Sticky inflation from economic strength, higher-for-longer rates pressuring valuations, tariff policy execution, geopolitical tensions (Iran negotiations Thursday)
 
 ---
 
